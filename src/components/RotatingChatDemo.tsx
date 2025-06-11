@@ -28,7 +28,7 @@ const RotatingChatDemo = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       nextDemo();
-    }, 8000); // Change demo every 8 seconds
+    }, 15000); // Change demo every 15 seconds
 
     return () => clearInterval(interval);
   }, []);
