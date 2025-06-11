@@ -62,7 +62,7 @@ const Privacy = () => {
         <div className="mt-16 text-center">
           <p className="text-gray-600">
             Want to know more?{" "}
-            <a href="#" className="text-blue-600 hover:text-blue-700 font-medium underline">
+            <a href="/privacy" className="text-blue-600 hover:text-blue-700 font-medium underline">
               Read our Privacy Policy
             </a>
           </p>

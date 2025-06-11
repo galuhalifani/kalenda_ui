@@ -9,7 +9,11 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <MessageCircle className="h-8 w-8 text-green-500" />
+              <img 
+                src="/lovable-uploads/5a8b5ed6-5d6c-4e4e-8dd8-64dccd82688b.png" 
+                alt="Kalenda Logo" 
+                className="h-8 w-8"
+              />
               <span className="text-2xl font-bold">Kalenda</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
@@ -37,7 +41,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Legal & Support</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
+                <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
                   <Shield className="h-3 w-3" />
                   Privacy Policy
                 </a>
@@ -83,7 +87,7 @@ const Footer = () => {
             <div className="text-gray-400 text-xs text-center md:text-right">
               <p>This app complies with Google API Services User Data Policy</p>
               <p className="mt-1">
-                <a href="/privacy-policy" className="underline hover:text-white">Privacy Policy</a> | 
+                <a href="/privacy" className="underline hover:text-white">Privacy Policy</a> | 
                 <a href="/terms-of-service" className="underline hover:text-white ml-1">Terms of Service</a>
               </p>
             </div>
