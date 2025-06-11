@@ -23,7 +23,7 @@ const messages = [
   },
   {
     id: 4,
-    text: "Yes, 30 minutes before please",
+    text: "Ok",
     sender: "user",
     time: "2:46 PM"
   },
@@ -31,13 +31,13 @@ const messages = [
     id: 5,
     text: "Adding your event...",
     sender: "kalenda",
-    time: "2:46 PM"
+    time: "2:47 PM"
   },
   {
     id: 6,
     text: "Event Created!\n\n        📅: Mary's ballet recital\n\n        🕒: Sat, 16 Dec 2025 15:00 UTC+07:00\n\n        👉: https://www.google.com/calendar/event?eid=bWFybzM0",
     sender: "kalenda",
-    time: "2:46 PM"
+    time: "2:47 PM"
   }
 ];
 
