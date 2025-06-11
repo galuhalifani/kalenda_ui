@@ -49,69 +49,74 @@ const HowItWorks = () => {
         </div>
         
         <div className="mx-auto mt-16 max-w-6xl">
-          {/* First two steps in a row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-12">
-            {steps.map((step, index) => (
-              <div key={index} className="relative">
-                <div className="text-center">
-                  <div className={`mx-auto w-16 h-16 ${step.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
-                    <step.icon className={`h-8 w-8 ${step.color}`} />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {step.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-                
-                {/* Arrow for desktop */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-full transform -translate-y-1/2 w-8">
-                    <ArrowRight className="h-6 w-6 text-gray-400 mx-auto" />
-                  </div>
-                )}
+          {/* Step 1: Send a Message */}
+          <div className="flex justify-center mb-8">
+            <div className="text-center">
+              <div className={`mx-auto w-16 h-16 ${steps[0].bgColor} rounded-2xl flex items-center justify-center mb-6`}>
+                <steps[0].icon className={`h-8 w-8 ${steps[0].color}`} />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {steps[0].title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed max-w-xs">
+                {steps[0].description}
+              </p>
+            </div>
           </div>
 
-          {/* Branching arrows and final steps */}
-          <div className="relative">
-            {/* Central branching point */}
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                {/* Branching arrows */}
-                <div className="hidden md:flex items-center justify-center gap-16">
-                  <div className="flex items-center">
-                    <ArrowRight className="h-6 w-6 text-gray-400 transform -rotate-45" />
-                  </div>
-                  <div className="flex items-center">
-                    <ArrowRight className="h-6 w-6 text-gray-400 transform rotate-45" />
-                  </div>
-                </div>
-              </div>
-            </div>
+          {/* Arrow down */}
+          <div className="flex justify-center mb-8">
+            <ArrowRight className="h-6 w-6 text-gray-400 transform rotate-90" />
+          </div>
 
-            {/* Final two branches */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-              {branches.map((branch, index) => (
-                <div key={index} className="text-center">
-                  <div className={`mx-auto w-16 h-16 ${branch.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
-                    <branch.icon className={`h-8 w-8 ${branch.color}`} />
-                  </div>
-                  
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {branch.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed">
-                    {branch.description}
-                  </p>
-                </div>
-              ))}
+          {/* Step 2: AI Understands */}
+          <div className="flex justify-center mb-8">
+            <div className="text-center">
+              <div className={`mx-auto w-16 h-16 ${steps[1].bgColor} rounded-2xl flex items-center justify-center mb-6`}>
+                <steps[1].icon className={`h-8 w-8 ${steps[1].color}`} />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {steps[1].title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed max-w-xs">
+                {steps[1].description}
+              </p>
             </div>
+          </div>
+
+          {/* Branching arrows */}
+          <div className="flex justify-center mb-8">
+            <div className="relative w-64 h-16">
+              {/* Left branch */}
+              <div className="absolute left-0 top-0">
+                <ArrowRight className="h-6 w-6 text-gray-400 transform -rotate-45" />
+              </div>
+              {/* Right branch */}
+              <div className="absolute right-0 top-0">
+                <ArrowRight className="h-6 w-6 text-gray-400 transform rotate-45" />
+              </div>
+              {/* Connecting lines */}
+              <div className="absolute left-6 top-3 w-52 border-t border-gray-300"></div>
+            </div>
+          </div>
+
+          {/* Final branches */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+            {branches.map((branch, index) => (
+              <div key={index} className="text-center">
+                <div className={`mx-auto w-16 h-16 ${branch.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
+                  <branch.icon className={`h-8 w-8 ${branch.color}`} />
+                </div>
+                
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {branch.title}
+                </h3>
+                
+                <p className="text-gray-600 leading-relaxed">
+                  {branch.description}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         
