@@ -5,7 +5,7 @@ import { Calendar } from "lucide-react";
 const messages = [
   {
     id: 1,
-    text: "📧 Email received from Ayyalah",
+    text: "Email screenshot from school",
     sender: "user",
     time: "15:26",
     isEmail: true
@@ -91,7 +91,7 @@ const ChatDemoEmail = () => {
               {message.isEmail && (
                 <div className="mb-2 p-3 bg-white rounded-lg border shadow-sm">
                   <div className="text-xs text-gray-600 mb-1">
-                    <strong>From:</strong> Ayyalah &lt;ayyalah@school.edu&gt;
+                    <strong>From:</strong> School teacher &lt;teacher@school.edu&gt;
                   </div>
                   <div className="text-xs text-gray-600 mb-2">
                     <strong>Subject:</strong> Saturday Morning Dress Rehearsal
