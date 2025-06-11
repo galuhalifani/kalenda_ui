@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, X, MessageCircle, Calendar, Shield, Users, Clock, Brain, Edit, Plus, BarChart3, Video } from "lucide-react";
@@ -44,15 +43,14 @@ const Guide = () => {
                 Watch how Kalenda works in action:
               </CardDescription>
             </CardHeader>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-8 py-3 text-lg text-foreground hover:text-foreground"
-            >
-              <Link to="/demo">
-              <Calendar className="mr-2 h-5 w-5" />
-              Try Kalenda
-            </Button>
+            <CardContent>
+              <Button asChild variant="outline" size="lg" className="px-8 py-3 text-lg text-foreground hover:text-foreground">
+                <Link to="/demo">
+                  <Calendar className="mr-2 h-5 w-5" />
+                  Try Kalenda
+                </Link>
+              </Button>
+            </CardContent>
           </Card>
 
           {/* What Kalenda Can Do */}
