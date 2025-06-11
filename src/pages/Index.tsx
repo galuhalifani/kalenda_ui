@@ -4,6 +4,7 @@ import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
 import Privacy from "@/components/Privacy";
 import CTA from "@/components/CTA";
+import LikeSection from "@/components/LikeSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -14,6 +15,7 @@ const Index = () => {
       <HowItWorks />
       <Privacy />
       <CTA />
+      <LikeSection />
       <Footer />
     </div>
   );

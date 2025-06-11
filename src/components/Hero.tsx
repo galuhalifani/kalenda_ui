@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Calendar, MessageCircle, Sparkles } from "lucide-react";
+import { Calendar, Sparkles } from "lucide-react";
 import ChatDemo from "./ChatDemo";
 
 const Hero = () => {
@@ -27,14 +27,10 @@ const Hero = () => {
             No more tedious calendar apps — just chat naturally.
           </p>
           
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3 text-lg">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Start Chatting
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 text-lg">
+          <div className="mt-10 flex items-center justify-center">
+            <Button variant="outline" size="lg" className="px-8 py-3 text-lg text-foreground hover:text-foreground">
               <Calendar className="mr-2 h-5 w-5" />
-              See Demo
+              Try Demo Calendar
             </Button>
           </div>
         </div>
