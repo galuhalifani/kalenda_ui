@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="mt-10 flex items-center justify-center">
             <Button variant="outline" size="lg" className="px-8 py-3 text-lg text-foreground hover:text-foreground">
               <Calendar className="mr-2 h-5 w-5" />
-              Try Demo Calendar
+              Try Kalenda
             </Button>
           </div>
         </div>
