@@ -66,20 +66,15 @@ const Demo = () => {
                       <p className="text-gray-600">Duration: 3:45 minutes</p>
                     </div>
                   ) : (
-                    <div className="w-full h-full bg-gray-900 flex items-center justify-center">
-                      <div className="text-center text-white">
-                        <Video className="h-16 w-16 mx-auto mb-4 opacity-60" />
-                        <p className="text-xl mb-2">Demo Video Playing</p>
-                        <p className="text-gray-300">Video placeholder - Integration pending</p>
-                        <Button
-                          variant="outline"
-                          onClick={() => setIsPlaying(false)}
-                          className="mt-4 text-white border-white hover:bg-white hover:text-gray-900"
-                        >
-                          Stop Video
-                        </Button>
-                      </div>
-                    </div>
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      autoPlay
+                      onEnded={() => setIsPlaying(false)}
+                    >
+                      <source src="/Kalenda_Demo.mp4" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
                   )}
                 </div>
               </AspectRatio>
