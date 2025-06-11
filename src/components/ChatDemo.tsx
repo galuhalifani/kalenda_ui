@@ -11,7 +11,7 @@ const messages = [
   },
   {
     id: 2,
-    text: "Perfect! I've added Mary's ballet recital to your calendar:\n\n📅 Saturday, Dec 16\n⏰ 3:00 PM\n📍 Kemang Village\n\nWould you like me to set a reminder?",
+    text: "Here is your event, please review:\n    1. Event Name: Mary's ballet recital\n    2. Event Date and Time: Saturday, 16 Dec 2025 15:00 - 16:00 (UTC+7)\n    3. Event Location: Kemang Village\n    4. Event Description: -- Created by kalenda AI\n    5. Attendees (emails): Not added\n    6. Event Timezone: Asia/Jakarta\n    7. Calendar Name: primary\nPlease confirm the above, or let me know if you'd like to modify some details.",
     sender: "kalenda",
     time: "2:46 PM",
     hasEvent: true
