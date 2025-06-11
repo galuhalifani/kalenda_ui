@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, MessageCircle, Clock, Users, Shield, Smartphone } from "lucide-react";
+import { Calendar, MessageCircle, Clock, Users, Shield, Smartphone, CheckCircle } from "lucide-react";
 
 const Guide = () => {
   return (
@@ -19,10 +19,10 @@ const Guide = () => {
               />
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              How to Use Kalenda
+              Panduan Penggunaan Kalenda
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-              Your complete guide to scheduling meetings effortlessly with WhatsApp and AI
+              Kelola jadwal pertemuan Anda dengan mudah melalui WhatsApp dan teknologi AI
             </p>
           </div>
         </div>
@@ -35,15 +35,15 @@ const Guide = () => {
             <TabsList className="grid w-full grid-cols-4 mb-8">
               <TabsTrigger value="setup" className="flex items-center gap-2">
                 <Smartphone className="h-4 w-4" />
-                Setup
-              </TabsTrigger>
-              <TabsTrigger value="scheduling" className="flex items-center gap-2">
-                <Calendar className="h-4 w-4" />
-                Scheduling
+                Persiapan
               </TabsTrigger>
               <TabsTrigger value="features" className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4" />
-                Features
+                Fitur
+              </TabsTrigger>
+              <TabsTrigger value="examples" className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                Contoh
               </TabsTrigger>
               <TabsTrigger value="tips" className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
@@ -56,10 +56,10 @@ const Guide = () => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Shield className="h-5 w-5 text-green-500" />
-                    Getting Started
+                    Cara Memulai
                   </CardTitle>
                   <CardDescription>
-                    Follow these simple steps to set up Kalenda with your calendar
+                    Ikuti langkah-langkah sederhana ini untuk mulai menggunakan Kalenda
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -67,22 +67,22 @@ const Guide = () => {
                     <div className="flex gap-4">
                       <Badge variant="outline" className="min-w-8 h-8 rounded-full flex items-center justify-center">1</Badge>
                       <div>
-                        <h3 className="font-semibold">Connect Your Calendar</h3>
-                        <p className="text-gray-600">Sign in and grant Kalenda permission to access your Google Calendar. We only read your availability and create events you approve.</p>
+                        <h3 className="font-semibold">Hubungkan Google Calendar</h3>
+                        <p className="text-gray-600">Masuk ke akun Google Anda dan berikan izin kepada Kalenda untuk mengakses kalender. Kami hanya membaca ketersediaan waktu dan membuat acara yang Anda setujui.</p>
                       </div>
                     </div>
                     <div className="flex gap-4">
                       <Badge variant="outline" className="min-w-8 h-8 rounded-full flex items-center justify-center">2</Badge>
                       <div>
-                        <h3 className="font-semibold">Save Our WhatsApp Number</h3>
-                        <p className="text-gray-600">Add <strong>+62 813-8514-2847</strong> to your contacts as "Kalenda" for easy access.</p>
+                        <h3 className="font-semibold">Simpan Nomor WhatsApp Kalenda</h3>
+                        <p className="text-gray-600">Tambahkan nomor <strong>+62 813-8514-2847</strong> ke kontak Anda dengan nama "Kalenda".</p>
                       </div>
                     </div>
                     <div className="flex gap-4">
                       <Badge variant="outline" className="min-w-8 h-8 rounded-full flex items-center justify-center">3</Badge>
                       <div>
-                        <h3 className="font-semibold">Start Scheduling</h3>
-                        <p className="text-gray-600">Send your first message to Kalenda and experience AI-powered scheduling!</p>
+                        <h3 className="font-semibold">Mulai Gunakan</h3>
+                        <p className="text-gray-600">Kirim pesan pertama Anda ke Kalenda dan rasakan kemudahan penjadwalan dengan AI!</p>
                       </div>
                     </div>
                   </div>
@@ -90,113 +90,35 @@ const Guide = () => {
               </Card>
             </TabsContent>
 
-            <TabsContent value="scheduling" className="space-y-6">
+            <TabsContent value="features" className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
                 <Card>
                   <CardHeader>
-                    <CardTitle>Basic Scheduling</CardTitle>
-                    <CardDescription>Simple meeting requests</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="bg-green-50 p-4 rounded-lg">
-                        <p className="text-sm font-medium text-green-800 mb-2">Example:</p>
-                        <p className="text-green-700">"Schedule a 1-hour meeting with John tomorrow at 2 PM"</p>
-                      </div>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li>• Kalenda checks your availability</li>
-                        <li>• Creates the meeting if you're free</li>
-                        <li>• Sends confirmation with details</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Smart Scheduling</CardTitle>
-                    <CardDescription>Let AI find the best time</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="bg-blue-50 p-4 rounded-lg">
-                        <p className="text-sm font-medium text-blue-800 mb-2">Example:</p>
-                        <p className="text-blue-700">"Find a good time this week for a 30-min call with Sarah"</p>
-                      </div>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li>• AI analyzes your calendar</li>
-                        <li>• Suggests optimal time slots</li>
-                        <li>• You choose your preferred option</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Rescheduling</CardTitle>
-                    <CardDescription>Change meetings easily</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="bg-orange-50 p-4 rounded-lg">
-                        <p className="text-sm font-medium text-orange-800 mb-2">Example:</p>
-                        <p className="text-orange-700">"Move my 3 PM meeting with Mike to Friday"</p>
-                      </div>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li>• Identifies the correct meeting</li>
-                        <li>• Checks new time availability</li>
-                        <li>• Updates calendar automatically</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Cancellations</CardTitle>
-                    <CardDescription>Cancel when plans change</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="bg-red-50 p-4 rounded-lg">
-                        <p className="text-sm font-medium text-red-800 mb-2">Example:</p>
-                        <p className="text-red-700">"Cancel my meeting with Lisa tomorrow"</p>
-                      </div>
-                      <ul className="space-y-2 text-sm text-gray-600">
-                        <li>• Finds the specified meeting</li>
-                        <li>• Removes from your calendar</li>
-                        <li>• Confirms cancellation</li>
-                      </ul>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="features" className="space-y-6">
-              <div className="grid gap-6 md:grid-cols-3">
-                <Card>
-                  <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <MessageCircle className="h-5 w-5 text-blue-500" />
-                      Natural Language
+                      <Calendar className="h-5 w-5 text-blue-500" />
+                      Buat Jadwal Meeting
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600">Chat naturally as you would with a human assistant. No need to learn special commands or formats.</p>
+                    <p className="text-gray-600 mb-4">Buat jadwal pertemuan baru dengan mudah</p>
+                    <div className="bg-blue-50 p-3 rounded-lg">
+                      <p className="text-blue-700 text-sm">"Buatkan jadwal meeting dengan John besok jam 2 siang selama 1 jam"</p>
+                    </div>
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Calendar className="h-5 w-5 text-green-500" />
-                      Smart Conflict Detection
+                      <Clock className="h-5 w-5 text-green-500" />
+                      Ubah Jadwal
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600">Automatically checks for scheduling conflicts and suggests alternative times when you're busy.</p>
+                    <p className="text-gray-600 mb-4">Pindahkan atau ubah jadwal yang sudah ada</p>
+                    <div className="bg-green-50 p-3 rounded-lg">
+                      <p className="text-green-700 text-sm">"Pindahkan meeting dengan Sarah dari jam 3 ke jam 4 sore"</p>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -204,97 +126,154 @@ const Guide = () => {
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Users className="h-5 w-5 text-purple-500" />
-                      Multi-person Meetings
+                      Batalkan Meeting
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600">Schedule meetings with multiple people and let Kalenda handle the coordination.</p>
+                    <p className="text-gray-600 mb-4">Batalkan pertemuan yang tidak jadi</p>
+                    <div className="bg-purple-50 p-3 rounded-lg">
+                      <p className="text-purple-700 text-sm">"Batalkan meeting dengan Tim besok"</p>
+                    </div>
                   </CardContent>
                 </Card>
 
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Clock className="h-5 w-5 text-orange-500" />
-                      Flexible Timing
+                      <MessageCircle className="h-5 w-5 text-orange-500" />
+                      Cek Jadwal
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600">Use relative times like "tomorrow," "next week," or "in 2 hours" for easy scheduling.</p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Shield className="h-5 w-5 text-red-500" />
-                      Privacy Focused
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">Your calendar data is never sold or shared. We only access what's needed for scheduling.</p>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Smartphone className="h-5 w-5 text-indigo-500" />
-                      WhatsApp Integration
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600">Works entirely through WhatsApp - no need to download another app or remember new passwords.</p>
+                    <p className="text-gray-600 mb-4">Lihat jadwal Anda untuk hari atau minggu tertentu</p>
+                    <div className="bg-orange-50 p-3 rounded-lg">
+                      <p className="text-orange-700 text-sm">"Apa jadwalku hari ini?" atau "Jadwal minggu depan gimana?"</p>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
             </TabsContent>
 
+            <TabsContent value="examples" className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Contoh Percakapan dengan Kalenda</CardTitle>
+                  <CardDescription>
+                    Berikut adalah contoh-contoh cara berkomunikasi dengan Kalenda
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-blue-500 pl-4">
+                      <h4 className="font-semibold text-blue-700">Membuat Meeting Baru</h4>
+                      <div className="mt-2 space-y-2">
+                        <div className="bg-gray-100 p-2 rounded text-sm">
+                          <strong>Anda:</strong> "Buatkan meeting dengan client PT. ABC besok jam 10 pagi selama 2 jam"
+                        </div>
+                        <div className="bg-green-100 p-2 rounded text-sm">
+                          <strong>Kalenda:</strong> "Meeting berhasil dibuat! 📅<br/>
+                          📍 Meeting dengan PT. ABC<br/>
+                          📅 Besok, 15 Januari 2024<br/>
+                          🕙 10:00 - 12:00 WIB<br/>
+                          Meeting sudah ditambahkan ke Google Calendar Anda."
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-l-4 border-green-500 pl-4">
+                      <h4 className="font-semibold text-green-700">Mengubah Jadwal</h4>
+                      <div className="mt-2 space-y-2">
+                        <div className="bg-gray-100 p-2 rounded text-sm">
+                          <strong>Anda:</strong> "Meeting dengan PT. ABC besok dimajukan jadi jam 9 pagi"
+                        </div>
+                        <div className="bg-green-100 p-2 rounded text-sm">
+                          <strong>Kalenda:</strong> "Meeting berhasil diubah! ✅<br/>
+                          📍 Meeting dengan PT. ABC<br/>
+                          📅 Besok, 15 Januari 2024<br/>
+                          🕙 09:00 - 11:00 WIB (diubah dari 10:00-12:00)<br/>
+                          Kalender sudah diperbarui."
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="border-l-4 border-orange-500 pl-4">
+                      <h4 className="font-semibold text-orange-700">Mengecek Jadwal</h4>
+                      <div className="mt-2 space-y-2">
+                        <div className="bg-gray-100 p-2 rounded text-sm">
+                          <strong>Anda:</strong> "Jadwalku hari ini apa aja?"
+                        </div>
+                        <div className="bg-green-100 p-2 rounded text-sm">
+                          <strong>Kalenda:</strong> "Ini jadwal Anda hari ini: 📅<br/>
+                          🕙 09:00-10:00 - Meeting Team Sprint<br/>
+                          🕙 14:00-15:00 - Call dengan Client<br/>
+                          🕙 16:00-17:00 - Review Proposal<br/>
+                          Total: 3 meeting hari ini."
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
             <TabsContent value="tips" className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle>Pro Tips for Better Scheduling</CardTitle>
-                  <CardDescription>Make the most of your Kalenda experience</CardDescription>
+                  <CardTitle>Tips Penggunaan Kalenda</CardTitle>
+                  <CardDescription>Maksimalkan pengalaman Anda dengan Kalenda</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-6">
                     <div>
-                      <h3 className="font-semibold mb-3">Be Specific When Possible</h3>
+                      <h3 className="font-semibold mb-3 flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-green-500" />
+                        Gunakan Bahasa Natural
+                      </h3>
+                      <p className="text-gray-600 mb-3">Kalenda memahami bahasa Indonesia yang natural. Tidak perlu menggunakan format khusus:</p>
                       <div className="grid gap-3 md:grid-cols-2">
                         <div className="bg-green-50 p-3 rounded-lg">
-                          <p className="text-sm font-medium text-green-800 mb-1">Good:</p>
-                          <p className="text-green-700 text-sm">"Schedule a 30-minute client call with John Smith on Tuesday at 2 PM"</p>
+                          <p className="text-sm font-medium text-green-800 mb-1">✅ Bagus:</p>
+                          <p className="text-green-700 text-sm">"Meeting dengan bos besok sore jam 3"</p>
                         </div>
-                        <div className="bg-red-50 p-3 rounded-lg">
-                          <p className="text-sm font-medium text-red-800 mb-1">Less Clear:</p>
-                          <p className="text-red-700 text-sm">"Set up a meeting"</p>
+                        <div className="bg-green-50 p-3 rounded-lg">
+                          <p className="text-sm font-medium text-green-800 mb-1">✅ Juga Bagus:</p>
+                          <p className="text-green-700 text-sm">"Bikin jadwal ketemu klien minggu depan"</p>
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold mb-3">Include Key Details</h3>
+                      <h3 className="font-semibold mb-3 flex items-center gap-2">
+                        <Clock className="h-5 w-5 text-blue-500" />
+                        Sebutkan Detail Penting
+                      </h3>
                       <ul className="space-y-2 text-gray-600">
-                        <li>• <strong>Duration:</strong> "30 minutes," "1 hour," "2-hour workshop"</li>
-                        <li>• <strong>Participants:</strong> Names or roles of attendees</li>
-                        <li>• <strong>Purpose:</strong> "client call," "team standup," "project review"</li>
-                        <li>• <strong>Location:</strong> "Zoom call," "conference room," "coffee shop"</li>
+                        <li>• <strong>Durasi:</strong> "30 menit", "2 jam", "setengah hari"</li>
+                        <li>• <strong>Peserta:</strong> Nama atau jabatan orang yang akan hadir</li>
+                        <li>• <strong>Topik:</strong> "presentasi", "review project", "brainstorming"</li>
+                        <li>• <strong>Lokasi:</strong> "Zoom", "ruang meeting", "kantor cabang"</li>
                       </ul>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold mb-3">Time Flexibility</h3>
-                      <p className="text-gray-600 mb-3">When you're flexible with timing, mention it:</p>
-                      <div className="bg-blue-50 p-3 rounded-lg">
-                        <p className="text-blue-700 text-sm">"Schedule a call with Sarah sometime this week, preferably in the afternoon"</p>
+                      <h3 className="font-semibold mb-3 flex items-center gap-2">
+                        <MessageCircle className="h-5 w-5 text-purple-500" />
+                        Waktu Fleksibel
+                      </h3>
+                      <p className="text-gray-600 mb-3">Kalenda bisa mencari waktu terbaik jika Anda fleksibel:</p>
+                      <div className="bg-purple-50 p-3 rounded-lg">
+                        <p className="text-purple-700 text-sm">"Carikan waktu kosong minggu ini untuk meeting dengan tim, sekitar 1-2 jam"</p>
                       </div>
                     </div>
 
                     <div>
-                      <h3 className="font-semibold mb-3">Recurring Meetings</h3>
-                      <p className="text-gray-600 mb-3">Set up regular meetings easily:</p>
-                      <div className="bg-purple-50 p-3 rounded-lg">
-                        <p className="text-purple-700 text-sm">"Schedule a weekly team standup every Monday at 9 AM"</p>
+                      <h3 className="font-semibold mb-3 flex items-center gap-2">
+                        <Users className="h-5 w-5 text-orange-500" />
+                        Meeting Berulang
+                      </h3>
+                      <p className="text-gray-600 mb-3">Buat jadwal meeting rutin dengan mudah:</p>
+                      <div className="bg-orange-50 p-3 rounded-lg">
+                        <p className="text-orange-700 text-sm">"Bikin meeting tim setiap Senin jam 9 pagi"</p>
                       </div>
                     </div>
                   </div>
@@ -303,21 +282,25 @@ const Guide = () => {
 
               <Card>
                 <CardHeader>
-                  <CardTitle>Common Questions</CardTitle>
+                  <CardTitle>Pertanyaan Umum</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-medium text-gray-900">What if I make a mistake in my message?</h4>
-                      <p className="text-gray-600 text-sm">Just send a follow-up message to clarify or correct. Kalenda understands context from your conversation.</p>
+                      <h4 className="font-medium text-gray-900">Bagaimana jika saya salah mengetik pesan?</h4>
+                      <p className="text-gray-600 text-sm">Cukup kirim pesan perbaikan. Kalenda memahami konteks percakapan dan bisa mengkoreksi jadwal sesuai instruksi terbaru.</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900">Can I schedule meetings for other people?</h4>
-                      <p className="text-gray-600 text-sm">Currently, Kalenda can only manage your personal calendar. Each person needs their own Kalenda connection.</p>
+                      <h4 className="font-medium text-gray-900">Apakah Kalenda bisa mengatur jadwal orang lain?</h4>
+                      <p className="text-gray-600 text-sm">Saat ini Kalenda hanya bisa mengelola kalender pribadi Anda. Setiap orang perlu menghubungkan akun mereka sendiri.</p>
                     </div>
                     <div>
-                      <h4 className="font-medium text-gray-900">What if the suggested time doesn't work?</h4>
-                      <p className="text-gray-600 text-sm">Simply tell Kalenda the time doesn't work and suggest alternatives. It will find new options based on your availability.</p>
+                      <h4 className="font-medium text-gray-900">Bagaimana jika waktu yang disarankan tidak cocok?</h4>
+                      <p className="text-gray-600 text-sm">Beritahu Kalenda bahwa waktunya tidak cocok dan minta alternatif lain. Kalenda akan mencari opsi waktu baru berdasarkan ketersediaan Anda.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Apakah data kalender saya aman?</h4>
+                      <p className="text-gray-600 text-sm">Ya! Kalenda hanya mengakses data yang diperlukan untuk penjadwalan dan tidak menyimpan atau membagikan informasi pribadi Anda.</p>
                     </div>
                   </div>
                 </CardContent>
