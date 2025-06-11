@@ -1,41 +1,18 @@
-
-import { Play, ArrowLeft, Video } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, Video } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 
 const Demo = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    // Auto-play the video when component mounts
-    const playVideo = async () => {
-      if (videoRef.current) {
-        try {
-          await videoRef.current.play();
-          setIsPlaying(true);
-        } catch (error) {
-          console.log("Autoplay prevented by browser:", error);
-          setIsPlaying(false);
-        }
-      }
-    };
-    
-    playVideo();
-  }, []);
-
-  const handlePlayClick = async () => {
-    if (videoRef.current) {
-      try {
-        await videoRef.current.play();
-        setIsPlaying(true);
-      } catch (error) {
-        console.log("Play failed:", error);
-      }
-    }
-  };
+  const [isIframeLoaded, setIsIframeLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -84,14 +61,37 @@ const Demo = () => {
             </CardHeader>
             <CardContent className="p-0">
               <div className="bg-gradient-to-br from-blue-100 to-green-100 p-4">
-                <div className="max-w-sm mx-auto relative">
-                  <iframe
-                    src="https://drive.google.com/file/d/19IpzDXDelZCNjRDpdMxW-Y2GmP_lyIjD/preview"
-                    width="100%"
-                    height="315"
-                    allow="autoplay"
-                    className="rounded-lg shadow-lg w-full aspect-video"
-                  />
+                <div className="max-w-sm mx-auto relative aspect-video rounded-lg shadow-lg overflow-hidden">
+                  {!isIframeLoaded && !hasError && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
+                      <div className="text-center text-gray-600">
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+                        <p className="text-sm">Loading video...</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {hasError ? (
+                    <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                      <div className="text-center text-gray-600">
+                        <Video className="h-12 w-12 mx-auto mb-2 opacity-50" />
+                        <p className="text-sm">Video unavailable</p>
+                        <p className="text-xs mt-1">
+                          Please try refreshing the page
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <iframe
+                      src="https://drive.google.com/file/d/19IpzDXDelZCNjRDpdMxW-Y2GmP_lyIjD/preview"
+                      width="100%"
+                      height="100%"
+                      allow="autoplay"
+                      className="w-full h-full"
+                      onLoad={() => setIsIframeLoaded(true)}
+                      onError={() => setHasError(true)}
+                    />
+                  )}
                 </div>
               </div>
             </CardContent>
