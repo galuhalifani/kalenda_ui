@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calendar, Play } from "lucide-react";
+import { MessageCircle, Calendar, Video, Users } from "lucide-react";
 
 const CTA = () => {
   return (
@@ -19,7 +19,7 @@ const CTA = () => {
               Try Kalenda
             </Button>
             <Button size="lg" className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 text-lg font-semibold">
-              <Play className="mr-2 h-5 w-5" />
+              <Video className="mr-2 h-5 w-5" />
               View Demo Video
             </Button>
           </div>
