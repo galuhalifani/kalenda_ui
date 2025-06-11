@@ -156,6 +156,7 @@ const Contact = () => {
                 </p>
               </CardContent>
             </Card>
+            
           </div>
         </div>
       </section>
