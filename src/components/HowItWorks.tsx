@@ -90,20 +90,9 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          {/* Branching arrows */}
+          {/* Arrow down */}
           <div className="flex justify-center mb-8">
-            <div className="relative w-64 h-16">
-              {/* Left branch */}
-              <div className="absolute left-0 top-0">
-                <ArrowRight className="h-6 w-6 text-gray-400 transform -rotate-45" />
-              </div>
-              {/* Right branch */}
-              <div className="absolute right-0 top-0">
-                <ArrowRight className="h-6 w-6 text-gray-400 transform rotate-45" />
-              </div>
-              {/* Connecting lines */}
-              <div className="absolute left-6 top-3 w-52 border-t border-gray-300"></div>
-            </div>
+            <ArrowRight className="h-6 w-6 text-gray-400 transform rotate-90" />
           </div>
 
           {/* Final branches */}
@@ -126,24 +115,6 @@ const HowItWorks = () => {
                 </div>
               );
             })}
-          </div>
-        </div>
-        
-        {/* Architecture diagram */}
-        <div className="mt-20 text-center">
-          <h3 className="text-xl font-semibold text-gray-900 mb-8">Built on Robust Architecture</h3>
-          <div className="bg-white rounded-2xl shadow-lg p-8 mx-auto max-w-4xl">
-            <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-600">
-              <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full font-medium">WhatsApp</span>
-              <ArrowRight className="h-4 w-4 text-gray-400" />
-              <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium">Twilio</span>
-              <ArrowRight className="h-4 w-4 text-gray-400" />
-              <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full font-medium">Flask API</span>
-              <ArrowRight className="h-4 w-4 text-gray-400" />
-              <span className="px-4 py-2 bg-orange-100 text-orange-700 rounded-full font-medium">GPT AI</span>
-              <ArrowRight className="h-4 w-4 text-gray-400" />
-              <span className="px-4 py-2 bg-red-100 text-red-700 rounded-full font-medium">Google Calendar</span>
-            </div>
           </div>
         </div>
       </div>
