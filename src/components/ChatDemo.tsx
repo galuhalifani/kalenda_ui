@@ -79,7 +79,6 @@ const ChatDemo = () => {
                 <div className="mt-2 p-2 bg-green-50 rounded-lg border border-green-200">
                   <div className="flex items-center gap-2 text-green-700">
                     <Calendar className="h-4 w-4" />
-                    <span className="text-xs font-medium">Event Created</span>
                   </div>
                 </div>
               )}
