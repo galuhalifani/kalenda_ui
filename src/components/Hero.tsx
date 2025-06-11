@@ -1,7 +1,8 @@
 
 import { Button } from "@/components/ui/button";
-import { Calendar, Sparkles } from "lucide-react";
+import { Calendar, Sparkles, Play } from "lucide-react";
 import RotatingChatDemo from "./RotatingChatDemo";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -27,10 +28,26 @@ const Hero = () => {
             No more tedious calendar apps — just chat naturally.
           </p>
           
-          <div className="mt-10 flex items-center justify-center">
-            <Button variant="outline" size="lg" className="px-8 py-3 text-lg text-foreground hover:text-foreground">
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <Button 
+              onClick={() => window.open('https://wa.me/12342616270?text=Hi%20Kalenda!', '_blank')}
+              variant="outline" 
+              size="lg" 
+              className="px-8 py-3 text-lg text-foreground hover:text-foreground"
+            >
               <Calendar className="mr-2 h-5 w-5" />
               Try Kalenda
+            </Button>
+            <Button 
+              asChild
+              variant="outline" 
+              size="lg" 
+              className="px-8 py-3 text-lg text-foreground hover:text-foreground"
+            >
+              <Link to="/demo">
+                <Play className="mr-2 h-5 w-5" />
+                View Demo Video
+              </Link>
             </Button>
           </div>
         </div>
