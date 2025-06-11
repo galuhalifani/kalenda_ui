@@ -1,5 +1,5 @@
 
-import { ArrowRight, MessageCircle, Brain, Calendar } from "lucide-react";
+import { ArrowRight, MessageCircle, Brain, Calendar, Search } from "lucide-react";
 
 const steps = [
   {
@@ -15,13 +15,23 @@ const steps = [
     description: "Our LLM processes your message and extracts all the important event details or requests.",
     color: "text-purple-600",
     bgColor: "bg-purple-100"
-  },
+  }
+];
+
+const branches = [
   {
     icon: Calendar,
     title: "Calendar Updated",
     description: "Event automatically added to your calendar with relevant details.",
     color: "text-green-600",
     bgColor: "bg-green-100"
+  },
+  {
+    icon: Search,
+    title: "Calendar Analyzed",
+    description: "Kalenda fetches specific event details, agenda, or analyzes your availability.",
+    color: "text-orange-600",
+    bgColor: "bg-orange-100"
   }
 ];
 
@@ -34,15 +44,15 @@ const HowItWorks = () => {
             How Kalenda Works
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Three simple steps to transform your scheduling experience
+            Simple steps to transform your scheduling experience
           </p>
         </div>
         
-        <div className="mx-auto mt-16 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
+        <div className="mx-auto mt-16 max-w-6xl">
+          {/* First two steps in a row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-4 mb-12">
             {steps.map((step, index) => (
               <div key={index} className="relative">
-                {/* Step */}
                 <div className="text-center">
                   <div className={`mx-auto w-16 h-16 ${step.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
                     <step.icon className={`h-8 w-8 ${step.color}`} />
@@ -65,6 +75,43 @@ const HowItWorks = () => {
                 )}
               </div>
             ))}
+          </div>
+
+          {/* Branching arrows and final steps */}
+          <div className="relative">
+            {/* Central branching point */}
+            <div className="flex justify-center mb-8">
+              <div className="relative">
+                {/* Branching arrows */}
+                <div className="hidden md:flex items-center justify-center gap-16">
+                  <div className="flex items-center">
+                    <ArrowRight className="h-6 w-6 text-gray-400 transform -rotate-45" />
+                  </div>
+                  <div className="flex items-center">
+                    <ArrowRight className="h-6 w-6 text-gray-400 transform rotate-45" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Final two branches */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+              {branches.map((branch, index) => (
+                <div key={index} className="text-center">
+                  <div className={`mx-auto w-16 h-16 ${branch.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
+                    <branch.icon className={`h-8 w-8 ${branch.color}`} />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {branch.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed">
+                    {branch.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         
