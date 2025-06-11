@@ -24,19 +24,19 @@ const features = [
   {
     icon: Calendar,
     title: "Google Calendar Sync",
-    description: "Seamlessly integrate with your existing Google Calendar. All events sync automatically and securely.",
+    description: "Seamlessly integrate with your existing Google Calendar, or use our shared calendar for testing.",
     gradient: "from-orange-500 to-red-500"
   },
   {
     icon: Clock,
     title: "Smart Availability",
-    description: "Ask Kalenda to find free slots in your calendar. It analyzes your schedule and suggests the best times.",
+    description: "Ask Kalenda to find free slots in your calendar. It analyzes your schedule and shows your free times.",
     gradient: "from-indigo-500 to-blue-500"
   },
   {
     icon: Shield,
     title: "Privacy First",
-    description: "Your data stays private. We never sell or share your information. Calendar access is optional and revocable.",
+    description: "Your data stays private. We never sell or share your information. Calendar access is optional and revocable. Authorization data are encrypted.",
     gradient: "from-gray-700 to-gray-900"
   }
 ];
