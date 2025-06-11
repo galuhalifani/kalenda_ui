@@ -1,5 +1,5 @@
 
-import { MessageCircle, Mail, Shield, FileText, HelpCircle } from "lucide-react";
+import { MessageCircle, Mail, Shield, FileText, HelpCircle, Pencil } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -30,7 +30,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
               <li><a href="/guide" className="text-gray-400 hover:text-white text-sm transition-colors">User Guide</a></li>
-              <li><a href="/demo" className="text-gray-400 hover:text-white text-sm transition-colors">Try Demo</a></li>
+              <li><a href="/demo" className="text-gray-400 hover:text-white text-sm transition-colors">Watch Demo</a></li>
+              <li><a href="https://wa.me/12342616270?text=Hi%20Kalenda!" className="text-gray-400 hover:text-white text-sm transition-colors">Try Kalenda!</a></li>
             </ul>
           </div>
 
@@ -51,6 +52,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
+                <Pencil className="h-3 w-3" />
                 <a href="/feedback" className="text-gray-400 hover:text-white text-sm transition-colors">Feedback</a>
               </li>
               <li>
