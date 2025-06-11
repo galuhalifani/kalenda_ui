@@ -10,7 +10,7 @@ const privacyFeatures = [
   {
     icon: Lock,
     title: "Encrypted",
-    description: "All communications are encrypted and secure"
+    description: "All keys are encrypted and secure"
   },
   {
     icon: Eye,
@@ -20,7 +20,7 @@ const privacyFeatures = [
   {
     icon: UserCheck,
     title: "Your Control",
-    description: "Revoke calendar access anytime with one click"
+    description: "Revoke calendar access anytime"
   }
 ];
 
