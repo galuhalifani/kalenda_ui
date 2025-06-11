@@ -311,7 +311,7 @@ const About = () => {
               to="/demo" 
               className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
-              Try Demo
+              Watch Demo
             </Link>
           </div>
         </div>
