@@ -53,7 +53,10 @@ const HowItWorks = () => {
           <div className="flex justify-center mb-8">
             <div className="text-center">
               <div className={`mx-auto w-16 h-16 ${steps[0].bgColor} rounded-2xl flex items-center justify-center mb-6`}>
-                <steps[0].icon className={`h-8 w-8 ${steps[0].color}`} />
+                {(() => {
+                  const IconComponent = steps[0].icon;
+                  return <IconComponent className={`h-8 w-8 ${steps[0].color}`} />;
+                })()}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {steps[0].title}
@@ -73,7 +76,10 @@ const HowItWorks = () => {
           <div className="flex justify-center mb-8">
             <div className="text-center">
               <div className={`mx-auto w-16 h-16 ${steps[1].bgColor} rounded-2xl flex items-center justify-center mb-6`}>
-                <steps[1].icon className={`h-8 w-8 ${steps[1].color}`} />
+                {(() => {
+                  const IconComponent = steps[1].icon;
+                  return <IconComponent className={`h-8 w-8 ${steps[1].color}`} />;
+                })()}
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {steps[1].title}
@@ -102,21 +108,24 @@ const HowItWorks = () => {
 
           {/* Final branches */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-            {branches.map((branch, index) => (
-              <div key={index} className="text-center">
-                <div className={`mx-auto w-16 h-16 ${branch.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
-                  <branch.icon className={`h-8 w-8 ${branch.color}`} />
+            {branches.map((branch, index) => {
+              const IconComponent = branch.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className={`mx-auto w-16 h-16 ${branch.bgColor} rounded-2xl flex items-center justify-center mb-6`}>
+                    <IconComponent className={`h-8 w-8 ${branch.color}`} />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {branch.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed">
+                    {branch.description}
+                  </p>
                 </div>
-                
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {branch.title}
-                </h3>
-                
-                <p className="text-gray-600 leading-relaxed">
-                  {branch.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
         
