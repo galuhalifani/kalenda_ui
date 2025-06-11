@@ -301,12 +301,12 @@ const About = () => {
             Stay organized. Stay human. Just message Kalenda.
           </p>
           <div className="flex justify-center gap-4">
-            <Link 
-              to="https://wa.me/12342616270?text=Hi%20Kalenda!" 
+            <button 
+              onClick={() => window.open('https://wa.me/12342616270?text=Hi%20Kalenda!', '_blank')}
               className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Get Started
-            </Link>
+            </button>
             <Link 
               to="/demo" 
               className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
