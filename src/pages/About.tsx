@@ -302,7 +302,7 @@ const About = () => {
           </p>
           <div className="flex justify-center gap-4">
             <Link 
-              to="/guide" 
+              to="https://wa.me/12342616270?text=Hi%20Kalenda!" 
               className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
               Get Started
