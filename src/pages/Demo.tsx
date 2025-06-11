@@ -61,7 +61,7 @@ const Demo = () => {
             </CardHeader>
             <CardContent className="p-0">
               <div className="bg-gradient-to-br from-blue-100 to-green-100 p-4">
-                <div className="max-w-sm mx-auto relative aspect-video rounded-lg shadow-lg overflow-hidden">
+                <div className="relative w-full max-w-[360px] mx-auto aspect-[9/16] rounded-lg shadow-lg overflow-hidden">
                   {!isIframeLoaded && !hasError && (
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-100 z-10">
                       <div className="text-center text-gray-600">
@@ -82,13 +82,13 @@ const Demo = () => {
                       </div>
                     </div>
                   ) : (
-                    <div className="relative w-[100%] max-w-[360px] mx-auto aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
-                      <iframe
-                        src="https://drive.google.com/file/d/19IpzDXDelZCNjRDpdMxW-Y2GmP_lyIjD/preview"
-                        allow="autoplay"
-                        className="absolute top-0 left-0 w-full h-full"
-                      />
-                    </div>
+                    <iframe
+                      src="https://drive.google.com/file/d/19IpzDXDelZCNjRDpdMxW-Y2GmP_lyIjD/preview"
+                      allow="autoplay"
+                      className="absolute top-0 left-0 w-full h-full"
+                      onLoad={() => setIsIframeLoaded(true)}
+                      onError={() => setHasError(true)}
+                    />
                   )}
                 </div>
               </div>
