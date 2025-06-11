@@ -50,7 +50,7 @@ const Contact = () => {
                 <p className="text-gray-700 mb-4">
                   Try ask Kalenda, it may just know what you need
                 </p>
-                <p className="font-semibold text-green-700 mb-4">+62 813-8514-2847</p>
+                <p className="font-semibold text-green-700 mb-4">+1234 261 6270</p>
                 <Button 
                   onClick={() => window.open('https://wa.me/12342616270?text=Hi%20Kalenda!', '_blank')}
                   className="w-full bg-green-600 hover:bg-green-700"
