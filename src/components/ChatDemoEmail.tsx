@@ -6,7 +6,7 @@ const messages = [
   {
     id: 1,
     text: "📧 Email received from Ayyalah",
-    sender: "kalenda",
+    sender: "user",
     time: "15:26",
     isEmail: true
   },
