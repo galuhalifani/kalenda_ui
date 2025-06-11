@@ -1,4 +1,3 @@
-
 import { MessageCircle, Mail, Shield, FileText, HelpCircle, Pencil } from "lucide-react";
 
 const Footer = () => {
@@ -26,7 +25,7 @@ const Footer = () => {
           </div>
 
           {/* Product Links */}
-          <div>
+          <div className="md:ml-8">
             <h3 className="text-lg font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
               <li><a href="/guide" className="text-gray-400 hover:text-white text-sm transition-colors">User Guide</a></li>
