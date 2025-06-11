@@ -2,6 +2,8 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, X, MessageCircle, Calendar, Shield, Users, Clock, Brain, Edit, Plus, BarChart3, Video } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Guide = () => {
   return (
@@ -42,14 +44,15 @@ const Guide = () => {
                 Watch how Kalenda works in action:
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              <div className="max-w-sm mx-auto">
-                <video width="100%" controls className="rounded-lg shadow-lg">
-                  <source src="../static/Kalenda_Demo.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-            </CardContent>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="px-8 py-3 text-lg text-foreground hover:text-foreground"
+            >
+              <Link to="/demo">
+              <Calendar className="mr-2 h-5 w-5" />
+              Try Kalenda
+            </Button>
           </Card>
 
           {/* What Kalenda Can Do */}
