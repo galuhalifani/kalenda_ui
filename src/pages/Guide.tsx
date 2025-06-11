@@ -35,7 +35,7 @@ const Guide = () => {
           {/* Demo Video Section */}
           <Card>
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+              <CardTitle className="flex items-center gap-2 mb-5">
                 <Video className="h-5 w-5 text-purple-500" />
                 🎥 Kalenda Demo Video
               </CardTitle>
@@ -47,7 +47,7 @@ const Guide = () => {
               <Button asChild variant="outline" size="lg" className="px-8 py-3 text-lg text-foreground hover:text-foreground">
                 <Link to="/demo">
                   <Calendar className="mr-2 h-5 w-5" />
-                  Try Kalenda
+                  Watch Demo Video
                 </Link>
               </Button>
             </CardContent>
