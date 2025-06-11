@@ -23,7 +23,7 @@ const messages = [
   },
   {
     id: 4,
-    text: "✅ Reminder set for 2:30 PM. You're all set! Enjoy the recital! 🩰",
+    text: "Event Created!\n\n        📅: Daycare Visit\n\n        🕒: Fri, 13 Jun 2025 10:00 UTC+07:00\n\n        👉: https://www.google.com/calendar/event?eid=bWFybzM0NmU5aWt0czJndWZra3Y0dDlyNTQgZ2FsdWguYWRpa2FAbQ",
     sender: "kalenda",
     time: "2:46 PM"
   }
@@ -74,13 +74,6 @@ const ChatDemo = () => {
               }`}
             >
               <p className="text-sm whitespace-pre-line">{message.text}</p>
-              {message.hasEvent && (
-                <div className="mt-2 p-2 bg-green-50 rounded-lg border border-green-200">
-                  <div className="flex items-center gap-2 text-green-700">
-                    <Calendar className="h-4 w-4" />
-                  </div>
-                </div>
-              )}
               <p className={`text-xs mt-1 ${
                 message.sender === 'user' ? 'text-blue-100' : 'text-gray-500'
               }`}>
