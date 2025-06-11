@@ -5,7 +5,7 @@ import { Calendar } from "lucide-react";
 const messages = [
   {
     id: 1,
-    text: "Email screenshot from school",
+    text: "Add this",
     sender: "user",
     time: "15:26",
     isEmail: true
