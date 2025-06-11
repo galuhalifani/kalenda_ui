@@ -12,14 +12,14 @@ const steps = [
   {
     icon: Brain,
     title: "AI Understands",
-    description: "Our LLM processes your message and extracts all the important event details.",
+    description: "Our LLM processes your message and extracts all the important event details or requests.",
     color: "text-purple-600",
     bgColor: "bg-purple-100"
   },
   {
     icon: Calendar,
     title: "Calendar Updated",
-    description: "Event automatically added to your calendar with reminders and all details.",
+    description: "Event automatically added to your calendar with relevant details.",
     color: "text-green-600",
     bgColor: "bg-green-100"
   }
