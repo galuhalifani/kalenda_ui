@@ -4,13 +4,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ChatDemo from "./ChatDemo";
 import ChatDemoPadel from "./ChatDemoPadel";
 import ChatDemoEmail from "./ChatDemoEmail";
+import ChatDemoAvailability from "./ChatDemoAvailability";
+import ChatDemoItalian from "./ChatDemoItalian";
 
 const RotatingChatDemo = () => {
   const [currentDemo, setCurrentDemo] = useState(0);
   const demos = [
     <ChatDemo key="demo1" />, 
     <ChatDemoPadel key="demo2" />, 
-    <ChatDemoEmail key="demo3" />
+    <ChatDemoEmail key="demo3" />,
+    <ChatDemoAvailability key="demo4" />,
+    <ChatDemoItalian key="demo5" />
   ];
 
   const nextDemo = () => {
