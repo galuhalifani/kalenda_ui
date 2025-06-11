@@ -82,15 +82,13 @@ const Demo = () => {
                       </div>
                     </div>
                   ) : (
-                    <iframe
-                      src="https://drive.google.com/file/d/19IpzDXDelZCNjRDpdMxW-Y2GmP_lyIjD/preview"
-                      width="100%"
-                      height="100%"
-                      allow="autoplay"
-                      className="w-full h-full"
-                      onLoad={() => setIsIframeLoaded(true)}
-                      onError={() => setHasError(true)}
-                    />
+                    <div className="relative w-[100%] max-w-[360px] mx-auto aspect-[9/16] rounded-lg overflow-hidden shadow-lg">
+                      <iframe
+                        src="https://drive.google.com/file/d/19IpzDXDelZCNjRDpdMxW-Y2GmP_lyIjD/preview"
+                        allow="autoplay"
+                        className="absolute top-0 left-0 w-full h-full"
+                      />
+                    </div>
                   )}
                 </div>
               </div>
