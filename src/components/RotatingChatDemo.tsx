@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ChatDemo from "./ChatDemo";
 import ChatDemoPadel from "./ChatDemoPadel";
+import ChatDemoEmail from "./ChatDemoEmail";
 
 const RotatingChatDemo = () => {
   const [currentDemo, setCurrentDemo] = useState(0);
-  const demos = [<ChatDemo key="demo1" />, <ChatDemoPadel key="demo2" />];
+  const demos = [
+    <ChatDemo key="demo1" />, 
+    <ChatDemoPadel key="demo2" />, 
+    <ChatDemoEmail key="demo3" />
+  ];
 
   const nextDemo = () => {
     setCurrentDemo(prev => (prev + 1) % demos.length);
