@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import { Heart } from "lucide-react";
 import { useState } from "react";
 import { ArrowRight, MessageCircle, Brain, Calendar, Search } from "lucide-react";
@@ -45,8 +46,14 @@ const LikeSection = () => {
           </div>
         </div>
       </div>
+      
+      {/* Separator before Built on section */}
+      <div className="mx-auto max-w-4xl px-6 lg:px-8 mt-16 mb-8">
+        <Separator />
+      </div>
+      
       {/* Architecture diagram */}
-        <div className="mb-3 mt-20 text-center">
+        <div className="mb-3 text-center">
           <h3 className="text-xl font-semibold text-gray-900 mb-8">Built on:</h3>
           <div className="bg-white rounded-2xl shadow-lg p-8 mx-auto max-w-4xl">
             <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-600">
