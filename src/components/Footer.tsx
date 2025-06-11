@@ -1,4 +1,6 @@
+
 import { MessageCircle, Mail, Shield, FileText, HelpCircle, Pencil } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -28,8 +30,8 @@ const Footer = () => {
           <div className="md:ml-8">
             <h3 className="text-lg font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><a href="/guide" className="text-gray-400 hover:text-white text-sm transition-colors">User Guide</a></li>
-              <li><a href="/demo" className="text-gray-400 hover:text-white text-sm transition-colors">Watch Demo</a></li>
+              <li><Link to="/guide" className="text-gray-400 hover:text-white text-sm transition-colors">User Guide</Link></li>
+              <li><Link to="/demo" className="text-gray-400 hover:text-white text-sm transition-colors">Watch Demo</Link></li>
               <li><a href="https://wa.me/12342616270?text=Hi%20Kalenda!" className="text-gray-400 hover:text-white text-sm transition-colors">Try Kalenda!</a></li>
             </ul>
           </div>
@@ -39,28 +41,28 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Legal & Support</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
+                <Link to="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
                   <Shield className="h-3 w-3" />
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
+                <Link to="/terms" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
                   <FileText className="h-3 w-3" />
                   Terms of Service
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/feedback" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
+                <Link to="/feedback" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
                   <Pencil className="h-3 w-3" />
                   Feedback
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
+                <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
                   <HelpCircle className="h-3 w-3" />
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -77,8 +79,8 @@ const Footer = () => {
             <div className="text-gray-400 text-xs text-center md:text-right">
               <p>This app has been verified and complies with Google API Services User Data Policy</p>
               <p className="mt-1">
-                <a href="/privacy" className="underline hover:text-white">Privacy Policy</a> | 
-                <a href="/terms" className="underline hover:text-white ml-1">Terms of Service</a>
+                <Link to="/privacy" className="underline hover:text-white">Privacy Policy</Link> | 
+                <Link to="/terms" className="underline hover:text-white ml-1">Terms of Service</Link>
               </p>
             </div>
           </div>
