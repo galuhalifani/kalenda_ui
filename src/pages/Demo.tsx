@@ -7,32 +7,48 @@ import { useState, useEffect, useRef } from "react";
 
 const Demo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Auto-play the video when component mounts
-    const playVideo = async () => {
-      if (videoRef.current) {
-        try {
-          await videoRef.current.play();
-          setIsPlaying(true);
-        } catch (error) {
-          console.log("Autoplay prevented by browser:", error);
-          setIsPlaying(false);
-        }
-      }
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleLoadedData = () => {
+      setIsLoading(false);
+      console.log("Video loaded successfully");
     };
-    
-    playVideo();
+
+    const handleError = (e: Event) => {
+      console.error("Video loading error:", e);
+      setHasError(true);
+      setIsLoading(false);
+    };
+
+    const handleCanPlay = () => {
+      setIsLoading(false);
+    };
+
+    video.addEventListener('loadeddata', handleLoadedData);
+    video.addEventListener('error', handleError);
+    video.addEventListener('canplay', handleCanPlay);
+
+    return () => {
+      video.removeEventListener('loadeddata', handleLoadedData);
+      video.removeEventListener('error', handleError);
+      video.removeEventListener('canplay', handleCanPlay);
+    };
   }, []);
 
   const handlePlayClick = async () => {
-    if (videoRef.current) {
+    if (videoRef.current && !isLoading) {
       try {
         await videoRef.current.play();
         setIsPlaying(true);
       } catch (error) {
         console.log("Play failed:", error);
+        setHasError(true);
       }
     }
   };
@@ -81,32 +97,53 @@ const Demo = () => {
             <CardContent className="p-0">
               <div className="bg-gradient-to-br from-blue-100 to-green-100 p-4">
                 <div className="max-w-sm mx-auto relative">
-                  <video
-                    ref={videoRef}
-                    className="w-full h-auto rounded-lg shadow-lg"
-                    controls
-                    autoPlay
-                    muted
-                    playsInline
-                    preload="auto"
-                    onPlay={() => setIsPlaying(true)}
-                    onPause={() => setIsPlaying(false)}
-                    onEnded={() => setIsPlaying(false)}
-                  >
-                    <source src="/Kalenda_Demo.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                  {!isPlaying && (
-                    <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-lg">
-                      <Button
-                        onClick={handlePlayClick}
-                        size="lg"
-                        className="bg-white/90 text-black hover:bg-white"
-                      >
-                        <Play className="h-6 w-6 mr-2" />
-                        Play Demo
-                      </Button>
+                  {hasError ? (
+                    <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                      <div className="text-center text-gray-600">
+                        <Video className="h-12 w-12 mx-auto mb-2 opacity-50" />
+                        <p className="text-sm">Video unavailable</p>
+                        <p className="text-xs mt-1">Please try refreshing the page</p>
+                      </div>
                     </div>
+                  ) : (
+                    <>
+                      <video
+                        ref={videoRef}
+                        className="w-full h-auto rounded-lg shadow-lg"
+                        controls
+                        preload="metadata"
+                        playsInline
+                        onPlay={() => setIsPlaying(true)}
+                        onPause={() => setIsPlaying(false)}
+                        onEnded={() => setIsPlaying(false)}
+                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect width='400' height='300' fill='%23f3f4f6'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236b7280'%3EKalenda Demo%3C/text%3E%3C/svg%3E"
+                      >
+                        <source src="/Kalenda_Demo.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                      
+                      {isLoading && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-100 rounded-lg">
+                          <div className="text-center text-gray-600">
+                            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-2"></div>
+                            <p className="text-sm">Loading video...</p>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {!isPlaying && !isLoading && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 rounded-lg">
+                          <Button
+                            onClick={handlePlayClick}
+                            size="lg"
+                            className="bg-white/90 text-black hover:bg-white"
+                          >
+                            <Play className="h-6 w-6 mr-2" />
+                            Play Demo
+                          </Button>
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
@@ -114,7 +151,6 @@ const Demo = () => {
           </Card>
         </div>
       </section>
-
     </div>
   );
 };
