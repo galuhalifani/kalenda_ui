@@ -17,9 +17,8 @@ const LikeSection = () => {
 
   return (
     <section className="py-16 bg-gradient-to-r from-pink-50 to-red-50">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-         {/* Architecture diagram */}
-        <div className="mb-10 text-center">
+       {/* Architecture diagram */}
+        <div className="mb-10 mt-0 text-center">
           <h3 className="text-xl font-semibold text-gray-900 mb-8">Built on:</h3>
           <div className="bg-white rounded-2xl shadow-lg p-8 mx-auto max-w-4xl">
             <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-600">
@@ -35,6 +34,7 @@ const LikeSection = () => {
             </div>
           </div>
         </div>
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-4">
           Show Your Support
         </h2>
