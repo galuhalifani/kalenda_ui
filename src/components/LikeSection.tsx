@@ -59,13 +59,11 @@ const LikeSection = () => {
             <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-600">
               <span className="px-4 py-2 bg-green-100 text-green-700 rounded-full font-medium">WhatsApp Twilio</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
-              <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium">OpenAI LLM</span>
-              <ArrowRight className="h-4 w-4 text-gray-400" />
               <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full font-medium">Flask API</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
-              <span className="px-4 py-2 bg-orange-100 text-orange-700 rounded-full font-medium">Google Calendar</span>
+              <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium">OpenAI LLM</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
-              <span className="px-4 py-2 bg-red-100 text-red-700 rounded-full font-medium">Redis</span>
+              <span className="px-4 py-2 bg-orange-100 text-orange-700 rounded-full font-medium">Google Calendar</span>
             </div>
           </div>
         </div>
