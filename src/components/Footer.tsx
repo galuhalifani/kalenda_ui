@@ -61,6 +61,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+        </div>
 
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-gray-800">
