@@ -2,7 +2,6 @@
 import { Play, ArrowLeft, Video } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -39,7 +38,7 @@ const Demo = () => {
 
       {/* Video Demo */}
       <section className="py-16">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+        <div className="mx-auto max-w-md px-6 lg:px-8">
           <Card className="overflow-hidden">
             <CardHeader className="text-center">
               <CardTitle className="flex items-center gap-3 justify-center">
@@ -51,23 +50,23 @@ const Demo = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="p-0">
-              <AspectRatio ratio={16 / 9} className="bg-gradient-to-br from-blue-100 to-green-100">
-                <div className="w-full h-full flex items-center justify-center relative">
-                  {!isPlaying ? (
-                    <div className="text-center">
-                      <Button
-                        size="lg"
-                        onClick={() => setIsPlaying(true)}
-                        className="mb-4 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
-                      >
-                        <Play className="h-6 w-6 mr-2" />
-                        Play Demo Video
-                      </Button>
-                      <p className="text-gray-600">Duration: 3:45 minutes</p>
-                    </div>
-                  ) : (
+              <div className="bg-gradient-to-br from-blue-100 to-green-100 p-4">
+                {!isPlaying ? (
+                  <div className="text-center">
+                    <Button
+                      size="lg"
+                      onClick={() => setIsPlaying(true)}
+                      className="mb-4 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
+                    >
+                      <Play className="h-6 w-6 mr-2" />
+                      Play Demo Video
+                    </Button>
+                    <p className="text-gray-600">Duration: 3:45 minutes</p>
+                  </div>
+                ) : (
+                  <div className="max-w-sm mx-auto">
                     <video
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto rounded-lg shadow-lg"
                       controls
                       autoPlay
                       onEnded={() => setIsPlaying(false)}
@@ -75,9 +74,9 @@ const Demo = () => {
                       <source src="/Kalenda_Demo.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                  )}
-                </div>
-              </AspectRatio>
+                  </div>
+                )}
+              </div>
             </CardContent>
           </Card>
         </div>
