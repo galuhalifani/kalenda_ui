@@ -1,12 +1,16 @@
-
 import { Play, ArrowLeft, Video } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Demo = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+
+  useEffect(() => {
+    // Auto-play the video when component mounts
+    setIsPlaying(true);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -51,31 +55,18 @@ const Demo = () => {
             </CardHeader>
             <CardContent className="p-0">
               <div className="bg-gradient-to-br from-blue-100 to-green-100 p-4">
-                {!isPlaying ? (
-                  <div className="text-center">
-                    <Button
-                      size="lg"
-                      onClick={() => setIsPlaying(true)}
-                      className="mb-4 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg"
-                    >
-                      <Play className="h-6 w-6 mr-2" />
-                      Play Demo Video
-                    </Button>
-                    <p className="text-gray-600">Duration: 3:45 minutes</p>
-                  </div>
-                ) : (
-                  <div className="max-w-sm mx-auto">
-                    <video
-                      className="w-full h-auto rounded-lg shadow-lg"
-                      controls
-                      autoPlay
-                      onEnded={() => setIsPlaying(false)}
-                    >
-                      <source src="/Kalenda_Demo.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                )}
+                <div className="max-w-sm mx-auto">
+                  <video
+                    className="w-full h-auto rounded-lg shadow-lg"
+                    controls
+                    autoPlay
+                    muted
+                    onEnded={() => setIsPlaying(false)}
+                  >
+                    <source src="/Kalenda_Demo.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
               </div>
             </CardContent>
           </Card>
