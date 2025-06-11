@@ -1,5 +1,5 @@
 
-import { Users, Target, Lightbulb, ArrowLeft } from "lucide-react";
+import { MessageSquare, Brain, Calendar, Camera, Mic, Users, Shield, ArrowLeft, Zap, Clock, Heart } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-green-50">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-green-50 to-purple-50">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Link to="/" className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-8 transition-colors">
             <ArrowLeft className="h-4 w-4" />
@@ -16,199 +16,302 @@ const About = () => {
           </Link>
           
           <div className="text-center">
-            <div className="flex justify-center mb-6">
-              <img 
-                src="/lovable-uploads/5a8b5ed6-5d6c-4e4e-8dd8-64dccd82688b.png" 
-                alt="Kalenda Logo" 
-                className="h-20 w-20"
-              />
+            <div className="flex justify-center mb-8">
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/5a8b5ed6-5d6c-4e4e-8dd8-64dccd82688b.png" 
+                  alt="Kalenda Logo" 
+                  className="h-24 w-24 drop-shadow-lg"
+                />
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-500 rounded-full animate-pulse"></div>
+              </div>
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-              About Kalenda
+            <h1 className="text-5xl font-bold tracking-tight text-gray-900 sm:text-6xl mb-6">
+              Kalenda
             </h1>
-            <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-              Revolutionizing calendar management through AI-powered WhatsApp conversations
+            <div className="flex justify-center mb-6">
+              <Badge variant="outline" className="text-lg px-4 py-2 bg-white/50 backdrop-blur-sm">
+                Your AI Calendar Assistant
+              </Badge>
+            </div>
+            <p className="text-xl leading-8 text-gray-600 max-w-4xl mx-auto">
+              A smart WhatsApp-based assistant powered by a <span className="font-semibold text-blue-600">Large Language Model (LLM)</span> to help busy individuals and families manage their schedules effortlessly through <span className="font-semibold text-green-600">natural language understanding</span> and <span className="font-semibold text-purple-600">Google Calendar API Integration</span>.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Background Story */}
       <section className="py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-2">
-            <Card className="border-2 border-blue-100">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Target className="h-6 w-6 text-blue-600" />
-                  Our Mission
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed">
-                  To simplify calendar management for everyone by making scheduling as easy as sending a WhatsApp message. We believe that technology should work for people, not the other way around.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-2 border-green-100">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Lightbulb className="h-6 w-6 text-green-600" />
-                  Our Vision
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed">
-                  A world where scheduling conflicts are a thing of the past, and everyone can focus on what truly matters - the conversations and connections that happen during meetings.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Story */}
-      <section className="py-16 bg-gray-50">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Our Story</h2>
-            <p className="mt-4 text-lg text-gray-600">How Kalenda came to life</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Background</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto rounded-full"></div>
           </div>
           
-          <div className="prose prose-lg mx-auto">
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Kalenda was born from a simple frustration: the endless back-and-forth emails trying to find a time that works for everyone. Our founders, experienced professionals who spent countless hours managing calendars, realized there had to be a better way.
-            </p>
-            
-            <p className="text-gray-700 leading-relaxed mb-6">
-              In 2024, with the rise of conversational AI, we saw an opportunity to transform how people interact with their calendars. Instead of learning new apps or complex interfaces, why not just talk to your calendar like you would talk to a personal assistant?
-            </p>
-            
-            <p className="text-gray-700 leading-relaxed">
-              Today, Kalenda serves thousands of users across Indonesia and beyond, helping them reclaim hours of their time previously lost to scheduling coordination. Every message sent through our platform represents a small victory against the chaos of modern calendar management.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Our Values</h2>
-            <p className="mt-4 text-lg text-gray-600">What drives us every day</p>
-          </div>
-          
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Simplicity First</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">We believe the best technology is invisible. Kalenda works through WhatsApp - no new apps to learn or passwords to remember.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Privacy by Design</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Your calendar data is yours. We never sell your information and only access what's necessary to provide our service.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Human-Centered AI</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Our AI is designed to understand natural language and context, making interactions feel genuinely conversational.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Reliability</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">When you trust us with your schedule, we take that responsibility seriously. Our systems are built for consistency and dependability.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Continuous Innovation</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">We're constantly improving based on user feedback and advancing AI capabilities to make scheduling even smarter.</p>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Accessibility</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600">Calendar management should be available to everyone, regardless of technical skill level or device limitations.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">The Team Behind Kalenda</h2>
-            <p className="mt-4 text-lg text-gray-600">Passionate individuals building the future of calendar management</p>
-          </div>
-          
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3">
-                <Users className="h-6 w-6 text-blue-600" />
-                Our Team
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Kalenda is built by a diverse team of engineers, designers, and AI specialists based in Indonesia. We combine deep technical expertise with a genuine understanding of the scheduling challenges faced by modern professionals.
+          <Card className="border-2 border-gray-100 bg-gradient-to-br from-gray-50 to-white">
+            <CardContent className="p-8">
+              <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                Between school events, birthday invites, doctor appointments, and daily chaos, staying organized is harder than it looks — especially when you're the default scheduler at home. Opening Google Calendar and typing in each event one-by-one can be tedious.
               </p>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">AI Engineering</Badge>
-                <Badge variant="outline">WhatsApp Integration</Badge>
-                <Badge variant="outline">Calendar APIs</Badge>
-                <Badge variant="outline">Natural Language Processing</Badge>
-                <Badge variant="outline">User Experience</Badge>
-                <Badge variant="outline">Data Security</Badge>
+              
+              <div className="grid gap-4 md:grid-cols-2">
+                <div className="flex items-start gap-3">
+                  <MessageSquare className="h-6 w-6 text-blue-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Make scheduling feel conversational, not technical</h4>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Zap className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Create events by sending a text, screenshot, or voice note</h4>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Users className="h-6 w-6 text-purple-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Simplify calendar management for busy parents, professionals, and caretakers</h4>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Heart className="h-6 w-6 text-red-500 mt-1 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-medium text-gray-900">Reduce mental load from remembering dates, times, and deadlines</h4>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
         </div>
       </section>
 
-      {/* Contact CTA */}
+      {/* Key Features */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">🔧 Key Features</h2>
+            <p className="text-lg text-gray-600">Powerful capabilities that make scheduling effortless</p>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="hover:shadow-lg transition-shadow border-2 border-blue-100">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <MessageSquare className="h-6 w-6 text-blue-600" />
+                  Natural Language Input
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-3">Add events simply by texting things like:</p>
+                <div className="bg-blue-50 p-3 rounded-lg italic text-blue-800">
+                  "Mary's ballet recital Saturday 3PM at Kemang Village"
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-2 border-green-100">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <Camera className="h-6 w-6 text-green-600" />
+                  Image Parsing
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Forward a photo of a flyer or invitation — Kalenda will extract event info automatically</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-2 border-purple-100">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <Mic className="h-6 w-6 text-purple-600" />
+                  Voice Support
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Don't feel like typing? Send a voice note — Kalenda transcribes and schedules it for you</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-2 border-orange-100">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <Calendar className="h-6 w-6 text-orange-600" />
+                  Fetch Calendar Events
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Kalenda is able to fetch and summarize your calendar events</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-2 border-teal-100">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <Clock className="h-6 w-6 text-teal-600" />
+                  Analyze Availability Slots
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Kalenda's smart analyzer can find you availability based on your current calendar slots</p>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow border-2 border-indigo-100">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3 text-lg">
+                  <Brain className="h-6 w-6 text-indigo-600" />
+                  Google Calendar Integration
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-2">Securely connect your Google Calendar so Kalenda can add and fetch events directly to your own calendar</p>
+                <Badge variant="outline" className="text-xs">Optional</Badge>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
       <section className="py-16">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">🔁 How It Works</h2>
+          </div>
+          
+          <Card className="bg-gradient-to-r from-blue-50 to-green-50 border-2 border-blue-100">
+            <CardContent className="p-8">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+                <div className="flex items-center gap-2">
+                  <MessageSquare className="h-8 w-8 text-blue-600" />
+                  <span className="font-semibold text-gray-900">User Input</span>
+                </div>
+                <div className="text-2xl text-gray-400">→</div>
+                <div className="flex items-center gap-2">
+                  <Brain className="h-8 w-8 text-purple-600" />
+                  <span className="font-semibold text-gray-900">Human Language Processing with AI</span>
+                </div>
+                <div className="text-2xl text-gray-400">→</div>
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-8 w-8 text-green-600" />
+                  <span className="font-semibold text-gray-900">Calendar Action</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Who It's For */}
+      <section className="py-16 bg-gray-50">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Who It's For</h2>
+            <p className="text-lg text-gray-600">Kalenda is perfect for:</p>
+          </div>
+          
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-blue-600" />
+                </div>
+                <CardTitle className="text-lg">Parents</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Juggling school, daycare, and appointments</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <MessageSquare className="h-8 w-8 text-green-600" />
+                </div>
+                <CardTitle className="text-lg">Professionals</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Who prefer messaging over app interfaces</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Heart className="h-8 w-8 text-purple-600" />
+                </div>
+                <CardTitle className="text-lg">Anyone</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">Who wants to get organized without opening a calendar app</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy & Architecture */}
+      <section className="py-16">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-2">
+            <Card className="border-2 border-green-100 bg-gradient-to-br from-green-50 to-white">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Shield className="h-6 w-6 text-green-600" />
+                  Privacy First
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 leading-relaxed">
+                  We never sell or share your data. Calendar access is optional and revocable. See{" "}
+                  <Link to="/privacy" className="text-green-600 hover:text-green-700 underline font-medium">
+                    Privacy Policy
+                  </Link>{" "}
+                  for details.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-blue-100 bg-gradient-to-br from-blue-50 to-white">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Brain className="h-6 w-6 text-blue-600" />
+                  🛠️ Architecture Overview
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-gray-50 p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                  <div className="whitespace-nowrap text-gray-700">
+                    User (WhatsApp) ──▶ Twilio Webhook ──▶ Flask API (Kalenda) ──▶ [ AI: GPT / Whisper ] ──▶ Google Calendar API ──▶ MongoDB
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600 text-white">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Want to Learn More?</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            We'd love to hear from you. Reach out with questions, feedback, or just to say hello.
+          <h2 className="text-3xl font-bold mb-4">Ready to Get Organized?</h2>
+          <p className="text-xl mb-8 text-blue-100">
+            Stay organized. Stay human. Just message Kalenda.
           </p>
           <div className="flex justify-center gap-4">
             <Link 
-              to="/contact" 
-              className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              to="/guide" 
+              className="inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
             >
-              Contact Us
+              Get Started
             </Link>
             <Link 
-              to="/guide" 
-              className="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+              to="/demo" 
+              className="inline-flex items-center px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-semibold"
             >
-              View Guide
+              Try Demo
             </Link>
           </div>
         </div>
