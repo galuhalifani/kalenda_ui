@@ -18,7 +18,7 @@ const LikeSection = () => {
   return (
     <section className="py-16 bg-gradient-to-r from-pink-50 to-red-50">
        {/* Architecture diagram */}
-        <div className="mb-10 mt-0 text-center">
+        <div className="mb-20 mt-0 text-center">
           <h3 className="text-xl font-semibold text-gray-900 mb-8">Built on:</h3>
           <div className="bg-white rounded-2xl shadow-lg p-8 mx-auto max-w-4xl">
             <div className="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-600">
