@@ -95,7 +95,7 @@ const HowItWorks = () => {
             <div className="relative w-64 h-16">
               {/* Left branch */}
               <div className="absolute left-0 top-0">
-                <ArrowRight className="h-6 w-6 text-gray-400 transform -rotate-75" />
+                <ArrowRight className="h-6 w-6 text-gray-400 transform -rotate-90" />
               </div>
               {/* Right branch */}
               <div className="absolute right-0 top-0">
