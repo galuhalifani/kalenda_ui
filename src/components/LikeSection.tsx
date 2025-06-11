@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart } from "lucide-react";
 import { useState } from "react";
+import { ArrowRight, MessageCircle, Brain, Calendar, Search } from "lucide-react";
 
 const LikeSection = () => {
   const [liked, setLiked] = useState(false);
