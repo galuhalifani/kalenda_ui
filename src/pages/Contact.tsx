@@ -44,18 +44,18 @@ const Contact = () => {
                   <MessageSquare className="h-6 w-6 text-green-600" />
                   WhatsApp Support
                 </CardTitle>
-                <CardDescription>Get instant help through WhatsApp</CardDescription>
+                <CardDescription>Chat Kalenda</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700 mb-4">
-                  Message us directly on WhatsApp for quick support and assistance.
+                  Try ask Kalenda, it may just know what you need
                 </p>
                 <p className="font-semibold text-green-700 mb-4">+62 813-8514-2847</p>
                 <Button 
-                  onClick={() => window.open('https://wa.me/6281385142847', '_blank')}
+                  onClick={() => window.open('https://wa.me/12342616270?text=Hi%20Kalenda!', '_blank')}
                   className="w-full bg-green-600 hover:bg-green-700"
                 >
-                  Start WhatsApp Chat
+                  Chat Kalenda
                 </Button>
               </CardContent>
             </Card>
@@ -65,7 +65,7 @@ const Contact = () => {
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
                   <Mail className="h-6 w-6 text-blue-600" />
-                  Email Support
+                  Email Us
                 </CardTitle>
                 <CardDescription>Send us a detailed message</CardDescription>
               </CardHeader>
@@ -73,9 +73,9 @@ const Contact = () => {
                 <p className="text-gray-700 mb-4">
                   For detailed inquiries or business partnerships, email us directly.
                 </p>
-                <p className="font-semibold text-blue-700 mb-4">hello@kalenda.id</p>
+                <p className="font-semibold text-blue-700 mb-4">kalenda.bot@gmail.com</p>
                 <Button 
-                  onClick={() => window.open('mailto:hello@kalenda.id', '_blank')}
+                  onClick={() => window.open('mailto:kalenda.bot@gmail.com', '_blank')}
                   variant="outline"
                   className="w-full border-blue-200 text-blue-700 hover:bg-blue-50"
                 >
@@ -104,34 +104,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Support Hours */}
-      <section className="py-16 bg-gray-50">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-center justify-center">
-                <Clock className="h-6 w-6 text-orange-600" />
-                Support Hours
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid gap-6 md:grid-cols-2">
-                <div className="text-center">
-                  <h3 className="font-semibold text-gray-900 mb-2">WhatsApp Support</h3>
-                  <p className="text-gray-600">24/7 AI-powered responses</p>
-                  <p className="text-sm text-gray-500 mt-1">Human support during business hours</p>
-                </div>
-                <div className="text-center">
-                  <h3 className="font-semibold text-gray-900 mb-2">Email Support</h3>
-                  <p className="text-gray-600">Monday - Friday</p>
-                  <p className="text-gray-600">9:00 AM - 6:00 PM WIB</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
@@ -147,7 +119,7 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Simply send a message to our WhatsApp number (+62 813-8514-2847) and follow the setup instructions. You'll need to connect your Google Calendar for full functionality.
+                  Simply send a message to our WhatsApp number (+12342616270) and follow the guide. You can use our public shared calendar if you wish to test or still prefer to not connect to your own. To add or fetch events to you own calendar, you need to connect your own Google Calendar by typing 'login'.
                 </p>
               </CardContent>
             </Card>
@@ -169,7 +141,7 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Currently, we support Google Calendar integration. We're working on adding support for other popular calendar platforms in the future.
+                  At this moment, we only support personal/individual Google Calendar.
                 </p>
               </CardContent>
             </Card>
@@ -180,37 +152,10 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Kalenda is currently free to use during our beta period. We'll announce pricing details as we move toward our official launch.
+                  Kalenda is currently free to use with certain limitations on number of chats per day. If you wish to increase your limit, please provide us feedback via kalenda.id/feedback. In case there are updates on premium or new plans for pricing, all information will be added to our website.
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-green-600 text-white">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Join thousands of users who have simplified their calendar management with Kalenda
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button 
-              onClick={() => window.open('https://wa.me/6281385142847', '_blank')}
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-gray-100"
-            >
-              Start Using Kalenda
-            </Button>
-            <Button 
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-600"
-            >
-              <Link to="/guide">View User Guide</Link>
-            </Button>
           </div>
         </div>
       </section>
