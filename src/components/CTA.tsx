@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Calendar, Video, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const CTA = () => {
   return (
