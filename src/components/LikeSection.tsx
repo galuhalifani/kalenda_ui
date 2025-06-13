@@ -30,10 +30,24 @@ const LikeSection = () => {
     checkIfUserLiked();
   }, []);
 
-  const handleLike = () => {
+  const handleLike = async () => {
     if (!liked && !loading) {
-      setLiked(true);
-      setLikeCount(prev => prev + 1);
+      try {
+        const serverUrl = import.meta.env.VITE_SERVER_URL;
+        const response = await fetch(`${serverUrl}/likes`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        
+        if (response.ok) {
+          setLiked(true);
+          setLikeCount(prev => prev + 1);
+        }
+      } catch (error) {
+        console.error('Error adding like:', error);
+      }
     }
   };
 
