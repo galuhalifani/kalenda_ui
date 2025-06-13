@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Heart } from "lucide-react";
@@ -31,7 +32,7 @@ const LikeSection = () => {
         if (response.ok) {
           const likesString = await response.text();
           const likes = parseInt(likesString, 10);
-          setLikeCount(likes);
+          setLikeCount(isNaN(likes) ? 0 : likes);
         }
       } catch (error) {
         console.error('Error fetching like count:', error);
