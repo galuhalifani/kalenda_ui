@@ -1,3 +1,10 @@
 {
+  "redirects": [
+    {
+      "source": "/connect/:user_id/:token",
+      "destination": "https://kalenda-bot.onrender.com/auth?user_id=:user_id&token=:token",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
