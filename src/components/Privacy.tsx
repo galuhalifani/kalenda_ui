@@ -10,7 +10,7 @@ const privacyFeatures = [
   {
     icon: Lock,
     title: "Encrypted",
-    description: "All keys are encrypted and secure"
+    description: "Chats and keys are encrypted and secure"
   },
   {
     icon: Eye,
