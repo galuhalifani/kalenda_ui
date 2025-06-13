@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Heart } from "lucide-react";
@@ -7,7 +6,7 @@ import { ArrowRight, MessageCircle, Brain, Calendar, Search } from "lucide-react
 
 const LikeSection = () => {
   const [liked, setLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(42); // Starting with a nice number
+  const [likeCount, setLikeCount] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -22,12 +21,30 @@ const LikeSection = () => {
         }
       } catch (error) {
         console.error('Error checking like status:', error);
+      }
+    };
+
+    const fetchLikeCount = async () => {
+      try {
+        const serverUrl = import.meta.env.VITE_SERVER_URL;
+        const response = await fetch(`${serverUrl}/getlikes`);
+        if (response.ok) {
+          const likesString = await response.text();
+          const likes = parseInt(likesString, 10);
+          setLikeCount(likes);
+        }
+      } catch (error) {
+        console.error('Error fetching like count:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    checkIfUserLiked();
+    const initializeData = async () => {
+      await Promise.all([checkIfUserLiked(), fetchLikeCount()]);
+    };
+
+    initializeData();
   }, []);
 
   const handleLike = async () => {
