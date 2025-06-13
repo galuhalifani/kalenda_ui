@@ -1,18 +1,72 @@
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Heart } from "lucide-react";
-import { useState } from "react";
+import { Heart, MessageSquare } from "lucide-react";
+import { useState, useEffect } from "react";
 import { ArrowRight, MessageCircle, Brain, Calendar, Search } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const LikeSection = () => {
   const [liked, setLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(42); // Starting with a nice number
+  const [likeCount, setLikeCount] = useState(0);
+  const [loading, setLoading] = useState(true);
 
-  const handleLike = () => {
-    if (!liked) {
-      setLiked(true);
-      setLikeCount(prev => prev + 1);
+  useEffect(() => {
+    const checkIfUserLiked = async () => {
+      try {
+        const serverUrl = import.meta.env.VITE_SERVER_URL;
+        const response = await fetch(`${serverUrl}/checkLike`);
+        if (response.ok) {
+          const hasLikedString = await response.text();
+          const hasLiked = hasLikedString.toLowerCase() === 'true';
+          setLiked(hasLiked);
+        }
+      } catch (error) {
+        console.error('Error checking like status:', error);
+      }
+    };
+
+    const fetchLikeCount = async () => {
+      try {
+        const serverUrl = import.meta.env.VITE_SERVER_URL;
+        const response = await fetch(`${serverUrl}/getlikes`);
+        if (response.ok) {
+          const likesString = await response.text();
+          const likes = parseInt(likesString, 10);
+          setLikeCount(isNaN(likes) ? 0 : likes);
+        }
+      } catch (error) {
+        console.error('Error fetching like count:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const initializeData = async () => {
+      await Promise.all([checkIfUserLiked(), fetchLikeCount()]);
+    };
+
+    initializeData();
+  }, []);
+
+  const handleLike = async () => {
+    if (!liked && !loading) {
+      try {
+        const serverUrl = import.meta.env.VITE_SERVER_URL;
+        const response = await fetch(`${serverUrl}/likes`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+        
+        if (response.ok) {
+          setLiked(true);
+          setLikeCount(prev => prev + 1);
+        }
+      } catch (error) {
+        console.error('Error adding like:', error);
+      }
     }
   };
 
@@ -20,13 +74,13 @@ const LikeSection = () => {
     <section className="py-16 bg-gradient-to-r from-pink-50 to-red-50">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
         <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl mb-4">
-          Show Your Support
+          Show Your Support & Help Us Improve
         </h2>
         <p className="text-lg text-muted-foreground mb-8">
-          If you enjoy or like Kalenda, please click on the like button below
+          Love Kalenda? Show your support with a like and help us make it even better with your feedback!
         </p>
         
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
           <Button
             onClick={handleLike}
             size="lg"
@@ -35,15 +89,27 @@ const LikeSection = () => {
                 ? "bg-red-500 hover:bg-red-600 text-white" 
                 : "bg-white text-red-500 border-2 border-red-500 hover:bg-red-50"
             }`}
-            disabled={liked}
+            disabled={liked || loading}
           >
             <Heart className={`mr-2 h-5 w-5 ${liked ? "fill-current" : ""}`} />
-            {liked ? "Thank you!" : "Like Kalenda"}
+            {loading ? "Loading..." : liked ? "Thank you!" : "Like Kalenda"}
           </Button>
           
-          <div className="text-sm text-muted-foreground">
-            {likeCount} people like Kalenda
-          </div>
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="px-8 py-3 text-lg border-2 border-blue-500 text-blue-500 hover:bg-blue-50"
+          >
+            <Link to="/feedback">
+              <MessageSquare className="mr-2 h-5 w-5" />
+              Share Feedback
+            </Link>
+          </Button>
+        </div>
+        
+        <div className="text-sm text-muted-foreground">
+          {likeCount} people like Kalenda
         </div>
       </div>
       
