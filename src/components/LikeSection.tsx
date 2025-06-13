@@ -2,15 +2,35 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Heart } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, MessageCircle, Brain, Calendar, Search } from "lucide-react";
 
 const LikeSection = () => {
   const [liked, setLiked] = useState(false);
   const [likeCount, setLikeCount] = useState(42); // Starting with a nice number
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const checkIfUserLiked = async () => {
+      try {
+        const response = await fetch('/checkLike');
+        if (response.ok) {
+          const hasLikedString = await response.text();
+          const hasLiked = hasLikedString.toLowerCase() === 'true';
+          setLiked(hasLiked);
+        }
+      } catch (error) {
+        console.error('Error checking like status:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    checkIfUserLiked();
+  }, []);
 
   const handleLike = () => {
-    if (!liked) {
+    if (!liked && !loading) {
       setLiked(true);
       setLikeCount(prev => prev + 1);
     }
@@ -35,10 +55,10 @@ const LikeSection = () => {
                 ? "bg-red-500 hover:bg-red-600 text-white" 
                 : "bg-white text-red-500 border-2 border-red-500 hover:bg-red-50"
             }`}
-            disabled={liked}
+            disabled={liked || loading}
           >
             <Heart className={`mr-2 h-5 w-5 ${liked ? "fill-current" : ""}`} />
-            {liked ? "Thank you!" : "Like Kalenda"}
+            {loading ? "Loading..." : liked ? "Thank you!" : "Like Kalenda"}
           </Button>
           
           <div className="text-sm text-muted-foreground">
