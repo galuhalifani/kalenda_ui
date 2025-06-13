@@ -62,7 +62,7 @@ const Footer = () => {
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center gap-1">
                   <HelpCircle className="h-3 w-3" />
-                  Contact
+                  FAQ & Contact
                 </Link>
               </li>
             </ul>
