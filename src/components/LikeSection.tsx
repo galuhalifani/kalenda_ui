@@ -63,6 +63,8 @@ const LikeSection = () => {
               <ArrowRight className="h-4 w-4 text-gray-400" />
               <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-medium">OpenAI LLM</span>
               <ArrowRight className="h-4 w-4 text-gray-400" />
+              <span className="px-4 py-2 bg-yellow-100 text-brown-700 rounded-full font-medium">OpenAI Whisper</span>
+              <ArrowRight className="h-4 w-4 text-gray-400" />
               <span className="px-4 py-2 bg-orange-100 text-orange-700 rounded-full font-medium">Google Calendar</span>
             </div>
           </div>

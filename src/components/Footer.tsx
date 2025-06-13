@@ -11,7 +11,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <img 
-                src="/lovable-uploads/5a8b5ed6-5d6c-4e4e-8dd8-64dccd82688b.png" 
+                src="logo.png" 
                 alt="Kalenda Logo" 
                 className="h-8 w-8"
               />
@@ -30,6 +30,7 @@ const Footer = () => {
           <div className="md:ml-8">
             <h3 className="text-lg font-semibold mb-4">Product</h3>
             <ul className="space-y-2">
+              <li><Link to="/about" className="text-gray-400 hover:text-white text-sm transition-colors">About Kalenda</Link></li>
               <li><Link to="/guide" className="text-gray-400 hover:text-white text-sm transition-colors">User Guide</Link></li>
               <li><Link to="/demo" className="text-gray-400 hover:text-white text-sm transition-colors">Watch Demo</Link></li>
               <li><a href="https://wa.me/12342616270?text=Hi%20Kalenda!" className="text-gray-400 hover:text-white text-sm transition-colors">Try Kalenda!</a></li>
