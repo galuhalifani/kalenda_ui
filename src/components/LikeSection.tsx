@@ -13,7 +13,8 @@ const LikeSection = () => {
   useEffect(() => {
     const checkIfUserLiked = async () => {
       try {
-        const response = await fetch('/checkLike');
+        const serverUrl = import.meta.env.VITE_SERVER_URL;
+        const response = await fetch(`${serverUrl}/checkLike`);
         if (response.ok) {
           const hasLikedString = await response.text();
           const hasLiked = hasLikedString.toLowerCase() === 'true';
