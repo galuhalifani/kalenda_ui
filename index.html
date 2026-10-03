@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kalenda – Scheduling chat on WhatsApp</title>
     <meta name="description" content="Kalenda Chat Calendar" />
-    <meta name="author" content="Kalenda" />
+    <meta name="author" content="Galuh Adika Alifani" />
     <meta name="facebook-domain-verification" content="ymx88m1krwnrt20jafbdcmry489xpf" />
 
     <meta property="og:title" content="Kalenda – Scheduling chat on WhatsApp" />
@@ -14,6 +14,17 @@
     <meta property="og:image" content="https://drive.google.com/uc?id=1ahlliG4VmZz2OlHzKlJ4M7ZGH68ZzMXr" />
 
     <link rel="icon" href="/favicon.png" type="image/png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Kalenda",
+        "legalName": "Galuh Adika Alifani",
+        "url": "https://www.kalenda.id",
+        "email": "kalenda.bot@gmail.com"
+      }
+    </script>
   </head>
 
   <body>
@@ -30,7 +41,16 @@
       <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
     </div>
 
-    <div id="root"></div>
+    <!-- Plain HTML for crawlers that don't run JavaScript, such as Meta's business verification.
+         React replaces it on load, and the footer shows the same operator name. -->
+    <div id="root">
+      <main>
+        <h1>Kalenda – Scheduling chat on WhatsApp</h1>
+        <p>Kalenda is operated by Galuh Adika Alifani.</p>
+        <p>Contact: <a href="mailto:kalenda.bot@gmail.com">kalenda.bot@gmail.com</a></p>
+        <p><a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p>
+      </main>
+    </div>
 
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -30,7 +30,7 @@ const Terms = () => {
       <div className="mx-auto max-w-4xl px-6 lg:px-8 py-16">
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-700 leading-relaxed mb-12">
-            Welcome to Kalenda! These Terms of Service ("Terms") govern your access to and use of Kalenda ("the Service"), a WhatsApp-based calendar assistant that helps users manage their schedules through natural language inputs. By using the Service, you agree to be bound by these Terms.
+            Welcome to Kalenda! Kalenda is operated by Galuh Adika Alifani. These Terms of Service ("Terms") govern your access to and use of Kalenda ("the Service"), a WhatsApp-based calendar assistant that helps users manage their schedules through natural language inputs. By using the Service, you agree to be bound by these Terms.
           </p>
 
           <section className="mb-12">
