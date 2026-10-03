@@ -22,7 +22,7 @@ const Guide = () => {
               📘 Kalenda — User Guide
             </h1>
             <p className="mt-6 text-xl leading-8 text-gray-600 max-w-3xl mx-auto">
-              Your AI-powered WhatsApp assistant that helps you stay on top of your schedule with natural conversations. <em>Please note that Kalenda performs best in English</em>
+              Your AI-assisted scheduling chat on WhatsApp that helps you stay on top of your schedule with natural conversations. <em>Please note that Kalenda performs best in English</em>
             </p>
           </div>
         </div>

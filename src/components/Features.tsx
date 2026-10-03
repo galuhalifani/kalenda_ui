@@ -50,7 +50,7 @@ const Features = () => {
             Everything you need to stay organized
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Kalenda transforms how you manage your calendar with AI-powered features that understand how you naturally communicate.
+            Kalenda transforms how you manage your calendar with AI-assisted scheduling that understands how you naturally communicate.
           </p>
         </div>
         
