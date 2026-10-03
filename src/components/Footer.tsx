@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-gray-400 text-sm">
-              © 2025 Kalenda. All rights reserved.
+              © 2025 Kalenda, operated by Galuh Adika Alifani. All rights reserved.
             </div>
             
             {/* OAuth Compliance Notice */}

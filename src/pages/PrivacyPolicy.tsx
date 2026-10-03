@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
       <div className="mx-auto max-w-4xl px-6 lg:px-8 py-16">
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-700 leading-relaxed mb-12">
-            Kalenda ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use Kalenda, our AI-assisted scheduling chat on WhatsApp.
+            Kalenda ("we", "our", or "us") is operated by Galuh Adika Alifani and is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use Kalenda, our AI-assisted scheduling chat on WhatsApp.
           </p>
 
           <section className="mb-12">
