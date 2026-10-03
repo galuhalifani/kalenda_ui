@@ -1,10 +1,13 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/connect/:user_id/:token",
-      "destination": "https://kalenda-bot.onrender.com/auth?user_id=:user_id&token=:token",
-      "permanent": true
-    }
-  ],
-  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
+      "destination": "https://kalenda-bot.onrender.com/auth?user_id=:user_id&token=:token"
+    },
+    {
+      "source": "/auth/google",
+      "destination": "https://kalenda-bot.onrender.com/auth/google"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
 }
