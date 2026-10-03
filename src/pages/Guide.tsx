@@ -88,7 +88,7 @@ const Guide = () => {
                   <Plus className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-green-700">📅 Add to Calendar</h3>
-                    <p className="text-gray-600">Once confirmed, Kalenda adds your event to your calendar (shared or personal).</p>
+                    <p className="text-gray-600">Once confirmed, Kalenda adds your event to your Google Calendar.</p>
                   </div>
                 </div>
 
@@ -137,12 +137,6 @@ const Guide = () => {
                   </div>
                 </div>
 
-                <div className="bg-red-50 p-4 rounded-lg border border-red-200">
-                  <p className="text-red-700 text-sm">
-                    <strong>Note:</strong> If you're using the <strong>shared public calendar</strong>, please email <strong>kalenda.bot@gmail.com</strong> to request modifications or deletions.
-                  </p>
-                </div>
-
                 <div className="flex gap-3">
                   <X className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
                   <div>
@@ -176,10 +170,7 @@ const Guide = () => {
                   <p className="font-medium text-blue-900">Message Kalenda on WhatsApp: <span className="font-bold">+1 (234) 261-6270</span></p>
                 </div>
                 <ul className="space-y-2 text-gray-700">
-                  <li>• By default, Kalenda uses a <strong>public shared calendar</strong> (Kalenda's calendar).</li>
-                  <li>• You can try all features using the shared calendar — no limitations.</li>
-                  <li>• However, <strong>events added to the public calendar cannot be deleted or modified</strong> by you directly. Please avoid including sensitive information.</li>
-                  <li>• To have full control over your events, you can <strong>connect your own Google Calendar</strong> (see below).</li>
+                  <li>• <strong>Connect your own Google Calendar</strong> first by typing <strong>login</strong> (see below). Kalenda needs it before it can add or fetch events.</li>
                 </ul>
               </div>
             </CardContent>
