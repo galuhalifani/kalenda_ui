@@ -119,7 +119,7 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-700">
-                  Simply send a message to our WhatsApp number (+12342616270) and follow the guide. You can use our public shared calendar if you wish to test or still prefer to not connect to your own. To add or fetch events to you own calendar, you need to connect your own Google Calendar by typing 'login'.
+                  Simply send a message to our WhatsApp number (+12342616270) and follow the guide. To add or fetch events, you need to connect your own Google Calendar by typing 'login'.
                 </p>
               </CardContent>
             </Card>

@@ -24,7 +24,7 @@ const features = [
   {
     icon: Calendar,
     title: "Google Calendar Sync",
-    description: "Seamlessly integrate with your existing Google Calendar, or use our shared calendar for testing.",
+    description: "Seamlessly integrate with your existing Google Calendar.",
     gradient: "from-orange-500 to-red-500"
   },
   {

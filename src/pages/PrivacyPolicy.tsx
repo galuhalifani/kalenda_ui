@@ -20,7 +20,7 @@ const PrivacyPolicy = () => {
             </div>
             <div>
               <h1 className="text-4xl font-bold">📄 Kalenda Privacy Policy</h1>
-              <p className="text-xl text-blue-100 mt-2">Effective Date: 20-05-2025</p>
+              <p className="text-xl text-blue-100 mt-2">Effective Date: 03-10-2026</p>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@ const PrivacyPolicy = () => {
       <div className="mx-auto max-w-4xl px-6 lg:px-8 py-16">
         <div className="prose prose-lg max-w-none">
           <p className="text-gray-700 leading-relaxed mb-12">
-            Kalenda ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use the Kalenda assistant via WhatsApp.
+            Kalenda ("we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use Kalenda, our AI-assisted scheduling chat on WhatsApp.
           </p>
 
           <section className="mb-12">
@@ -41,19 +41,22 @@ const PrivacyPolicy = () => {
             <h3 className="text-xl font-semibold text-gray-900 mb-3">1. User Identifiers</h3>
             <ul className="list-disc list-inside text-gray-700 mb-6 space-y-2">
               <li>WhatsApp phone number (used to identify and respond to users)</li>
-              <li>Optional: Email address (for connecting to your Google Calendar)</li>
+              <li>Your timezone setting and how many messages you sent today (for the daily limit)</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-gray-900 mb-3">2. Messages & Media</h3>
             <ul className="list-disc list-inside text-gray-700 mb-6 space-y-2">
               <li>Messages you send to Kalenda (including text, images, voice notes, and screenshots)</li>
               <li>We temporarily process these information to extract events or understand your requests.</li>
-              <li>We DO NOT store or retain any of those media or event details in our database</li>
+              <li>We do not keep your images or voice notes after processing them.</li>
+              <li>Your last 4 messages, Kalenda's replies, and your current event draft are kept for up to 24 hours so Kalenda can follow the conversation.</li>
+              <li>When you send feedback, we save it together with those recent messages and your current draft, without your phone number, to help us fix problems.</li>
+              <li>For usage statistics we record the type and length of each request, not its content.</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">3. Google Calendar Data (Optional)</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">3. Google Calendar Data</h3>
             <ul className="list-disc list-inside text-gray-700 mb-6 space-y-2">
-              <li>If you choose to connect your Google Calendar, we access:
+              <li>Kalenda needs your Google Calendar connected before it can add or fetch events. Once you connect it, we access:
                 <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
                   <li>Your calendar list</li>
                   <li>Events you create or view through Kalenda</li>
@@ -100,9 +103,10 @@ const PrivacyPolicy = () => {
               <span>📁</span> Data Retention
             </h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
-              <li>Event-related messages may be temporarily stored to provide context and memory, and will be removed after 24 hours.</li>
-              <li>Google access and refresh tokens are encrypted and stored securely.</li>
-              <li>You may revoke access or delete your data at any time by messaging: <code className="bg-gray-100 px-2 py-1 rounded text-sm">revoke access</code>.</li>
+              <li>Recent messages and event drafts are removed after 24 hours.</li>
+              <li>Google access and refresh tokens are encrypted and stored securely, and are deleted automatically 4 weeks after you connect. After that, type <code className="bg-gray-100 px-2 py-1 rounded text-sm">login</code> to connect again.</li>
+              <li>To disconnect your Google Calendar at any time, message <code className="bg-gray-100 px-2 py-1 rounded text-sm">logout</code>. This deletes your Google tokens.</li>
+              <li>To delete all your data, including your phone number and settings, email <a href="mailto:kalenda.bot@gmail.com" className="text-blue-600 hover:text-blue-700 underline">kalenda.bot@gmail.com</a>.</li>
             </ul>
           </section>
 
@@ -115,8 +119,13 @@ const PrivacyPolicy = () => {
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-2">
               <li><strong>Twilio WhatsApp API</strong> — to receive and send messages</li>
-              <li><strong>Google OAuth API</strong> — to connect your calendar, if you choose to</li>
+              <li><strong>Google OAuth and Calendar API</strong> — to connect your calendar and add or fetch events</li>
               <li><strong>OpenAI API</strong> — to process your messages using AI</li>
+              <li><strong>MongoDB Atlas</strong> — database for your account, settings and Google tokens</li>
+              <li><strong>Redis</strong> — temporary storage for recent messages and drafts (up to 24 hours)</li>
+              <li><strong>Render</strong> — hosts the Kalenda server</li>
+              <li><strong>Vercel</strong> — hosts this website</li>
+              <li><strong>Sentry</strong> — error monitoring; receives error details only, not your messages or phone number</li>
             </ul>
             <p className="text-gray-700 leading-relaxed mt-4">
               These providers have their own privacy policies and comply with standard data security practices.
